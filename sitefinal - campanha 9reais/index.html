@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9Pilla | Morning Call - Turma Fundadora</title>
+    <style>
+        /* --- ESTILO PREMIUM DARK MODE --- */
+        :root {
+            --bg-dark: #050505;
+            --bg-card: #121212;
+            --text-main: #e0e0e0;
+            --text-muted: #a0a0a0;
+            --green-profit: #00E676; /* Verde Dinheiro */
+            --green-hover: #00c853;
+            --red-alert: #D50000;    /* Vermelho Urgência */
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Helvetica, Arial, sans-serif; }
+        
+        body { background-color: var(--bg-dark); color: var(--text-main); line-height: 1.6; }
+
+        /* TIPOGRAFIA */
+        h1, h2, h3 { color: #fff; font-weight: 700; letter-spacing: -0.5px; }
+        h1 { font-size: 2.2rem; line-height: 1.2; margin-bottom: 20px; }
+        h2 { font-size: 1.8rem; margin-bottom: 20px; color: var(--green-profit); }
+        h3 { font-size: 1.4rem; margin-bottom: 15px; color: #fff; }
+        p { margin-bottom: 15px; font-size: 1.1rem; color: var(--text-muted); }
+        strong { color: #fff; font-weight: 600; }
+
+        /* CONTAINER */
+        .container { max-width: 800px; margin: 0 auto; padding: 20px; }
+
+        /* BARRA DE ESCASSEZ */
+        .urgency-bar {
+            background: linear-gradient(90deg, #b71c1c, #d50000);
+            color: #fff;
+            padding: 12px;
+            text-align: center;
+            font-weight: bold;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(213, 0, 0, 0.3);
+            font-size: 0.9rem;
+        }
+        .timer { font-family: monospace; font-size: 1.1rem; background: rgba(0,0,0,0.2); padding: 2px 8px; border-radius: 4px; margin-left: 5px; }
+
+        /* HERO SECTION */
+        .hero { text-align: center; padding: 50px 20px; border-bottom: 1px solid #222; }
+        .brand-name { color: var(--green-profit); text-transform: uppercase; letter-spacing: 2px; font-size: 0.85rem; font-weight: bold; margin-bottom: 15px; display: block; }
+        
+        .price-box { margin: 25px 0; }
+        .old-price { text-decoration: line-through; color: #666; font-size: 1.1rem; }
+        .new-price { font-size: 3.5rem; font-weight: 800; color: #fff; display: block; line-height: 1; margin: 5px 0; }
+        .period { font-size: 1rem; color: var(--green-profit); }
+
+        /* BOTÃO CTA */
+        .btn-cta {
+            background-color: var(--green-profit);
+            color: #000;
+            padding: 16px 35px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 800;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            display: inline-block;
+            transition: transform 0.2s, box-shadow 0.2s, background-color 0.2s;
+            box-shadow: 0 0 15px rgba(0, 230, 118, 0.3);
+            margin-top: 10px;
+        }
+        .btn-cta:hover { transform: scale(1.05); box-shadow: 0 0 25px rgba(0, 230, 118, 0.5); background-color: var(--green-hover); }
+
+        /* SECTION STYLES */
+        .section-padding { padding: 50px 20px; border-bottom: 1px solid #222; }
+
+        /* ANALOGIA BOX */
+        .analogy-card {
+            background-color: var(--bg-card);
+            border-left: 4px solid var(--green-profit);
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 0 8px 8px 0;
+        }
+
+        /* MANIFESTO (CARTA) - DESTAQUE ESPECIAL */
+        .manifesto-section {
+            background-color: #111;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 40px 30px;
+            margin: 40px 0;
+            position: relative;
+        }
+        /* Aspas decorativas */
+        .manifesto-section::before {
+            content: "“";
+            font-size: 6rem;
+            color: #222;
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-family: serif;
+            line-height: 1;
+        }
+
+        /* AUDIO PLAYER MOCKUP */
+        .audio-spoiler {
+            background: #1a1a1a;
+            border: 1px solid #333;
+            border-radius: 12px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0;
+        }
+        .play-icon { width: 45px; height: 45px; background: var(--green-profit); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #000; font-size: 1.2rem; cursor: pointer; flex-shrink: 0; }
+        .wave-lines { flex: 1; height: 30px; background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 20" preserveAspectRatio="none"><path d="M0,10 L5,5 L10,15 L15,10 L20,18 L25,2 L30,10 L35,10 L40,5 L45,15 L50,10 L55,10 L60,18 L65,2 L70,10 L75,10 L80,5 L85,15 L90,10 L95,10 L100,10" stroke="%23555" fill="none" vector-effect="non-scaling-stroke"/></svg>'); background-size: cover; opacity: 0.5; }
+
+        /* BIO SECTION */
+        .bio-container { display: flex; flex-wrap: wrap; gap: 30px; align-items: center; margin-top: 30px; }
+        .bio-img { width: 120px; height: 120px; border-radius: 50%; object-fit: cover; border: 2px solid var(--green-profit); flex-shrink: 0; }
+        
+        /* LISTAS */
+        .benefit-list { list-style: none; margin: 20px 0; }
+        .benefit-list li { margin-bottom: 12px; font-size: 1.05rem; display: flex; align-items: flex-start; }
+        .check { color: var(--green-profit); margin-right: 10px; font-weight: bold; min-width: 20px; }
+
+        /* CAIXA COMPARATIVA FINAL */
+        .comparison-box {
+            background: #222;
+            padding: 25px;
+            border-radius: 10px;
+            display: inline-block;
+            margin: 30px 0;
+            text-align: center;
+            border: 1px solid #333;
+        }
+
+        /* RESPONSIVO */
+        @media (max-width: 600px) {
+            h1 { font-size: 1.8rem; }
+            .new-price { font-size: 3rem; }
+            .bio-container { flex-direction: column; text-align: center; }
+            .manifesto-section { padding: 30px 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="urgency-bar">
+        ⚠️ OPORTUNIDADE  <span id="countdown" class="timer">30m 00s</span>
+    </div>
+
+    <header class="hero container">
+    <img class="brand-logo" src="logo.png" style="width: 150px; height: auto;" alt="Logo do 9Pilla">
+    
+        <h1>Pare de investir no escuro.<br>Comece o dia com a visão de um analista de mercado.</h1>
+        <p>Tenha acesso ao <strong>Morning Call 9Pilla</strong>: inteligência financeira e análise de dados direto no seu WhatsApp.</p>
+
+        <div class="price-box">
+            <span class="old-price">De R$ 49,90</span>
+            <span class="new-price">R$ 9,00</span>
+            <span  (Valor Exclusivo de Lançamento)</span>
+        </div>
+
+        <a href="https://pay.hub.la/y6qTWsYEpCiDFW6UsZcp" class="btn-cta">COMPRAR</a>
+        <p style="margin-top: 15px; font-size: 0.85rem; color: #888;">🔒 Compra Segura | Cancele quando quiser</p>
+    </header>
+
+    <section class="section-padding container">
+        <h2>Mas afinal, o que é o Morning Call?</h2>
+        
+        <div class="analogy-card">
+            <h3 style="color: var(--green-profit); font-size: 1.2rem; margin-bottom: 10px;">🏎️ A Analogia do Piloto</h3>
+            <p style="margin-bottom: 0;">"Imagine que você é um piloto de Fórmula 1. Antes de entrar na pista, você precisa saber: vai chover? Como está o asfalto? O que as outras equipes estão fazendo?"</p>
+        </div>
+
+        <p>No Mercado Financeiro, o <strong>Morning Call</strong> é exatamente isso: o seu <em>briefing</em> matinal.</p>
+        <p>Todos os dias, antes da bolsa abrir, eu analiso o cenário global e traduzo a complexidade dos dados em um áudio curto, direto e acionável para você.</p>
+    </section>
+
+    <section class="section-padding container">
+        <div class="manifesto-section">
+            <h2 style="color: #fff; text-align: center; margin-bottom: 30px;">Minha Missão com Você</h2>
+            
+            <p>Quando comecei a investir em 2017, eu senti o que talvez você esteja sentindo agora: <strong>medo.</strong></p>
+            
+            <p>O mercado financeiro parecia um clube fechado, onde todos falavam uma língua difícil e as informações realmente úteis custavam caro ou chegavam atrasadas para o pequeno investidor. Eu tive que aprender errando, arriscando meu próprio dinheiro e batendo cabeça para filtrar o que era ruído e o que era sinal.</p>
+            
+            <p><strong>Eu criei a 9Pilla para ser a ponte que eu não tive.</strong></p>
+            
+            <p>Decidi cobrar apenas R$ 9,00 por um motivo simples: eu não quero que o preço seja uma barreira para você ter acesso à informação de qualidade. Quero que você comece o seu dia com a mesma clareza dos grandes investidores, sem precisar gastar horas lendo notícias ou fortunas em relatórios complexos.</p>
+            
+            <p>A minha missão é democratizar a inteligência de mercado. O valor é simbólico, mas o compromisso com o seu crescimento financeiro é absoluto.</p>
+<div style="margin-top: 30px; display: flex; align-items: center; gap: 15px;">
+    
+    <img src="raquel.png" alt="Foto Raquel Santos" style="width: 50px; height: 50px; border-radius: 50%; object-fit: cover;">
+
+    <div>
+        <p style="margin: 0; color: #fff; font-weight: bold;">Raquel Santos</p>
+        <p style="margin: 0; font-size: 0.85rem;">Fundadora da 9Pilla</p>
+    </div>
+   </div>
+   </div>
+<section class="section-padding container" style="background-color: #0a0a0a; color: white; padding: 40px 20px; text-align: center;">
+    
+    <h2 style="font-size: 1.8rem; margin-bottom: 15px;">🎧 A clareza que você precisa</h2>
+    <p style="color: #ccc; margin-bottom: 25px; max-width: 600px; margin-left: auto; margin-right: auto;">
+        Aperte o play e ouça o spoiler, a clareza que vai guiar suas manhãs no mercado. É isso que chega no seu WhatsApp:
+    </p>
+
+    <div style="display: flex; justify-content: center; margin-bottom: 30px;">
+        
+        <audio id="audioPlayer" preload="metadata">
+            <source src="spoiler.mp3" type="audio/mpeg">
+        </audio>
+
+        <div style="background-color: #005c4b; padding: 12px 15px; border-radius: 0px 15px 15px 15px; min-width: 280px; max-width: 350px; box-shadow: 0 2px 5px rgba(0,0,0,0.3); text-align: left;">
+            
+            <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 10px;">
+                <div id="playBtn" onclick="togglePlay()" style="color: #aebac1; font-size: 30px; cursor: pointer; min-width: 25px;">▶</div>
+                
+                <input type="range" id="seekSlider" value="0" max="100" style="flex-grow: 1; cursor: pointer; height: 5px;">
+                
+                <div style="color: #53bdeb; font-size: 20px; opacity: 0.9;">🎤</div> 
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; font-family: sans-serif; font-size: 0.75rem;">
+                <span id="currentTime" style="color: #e9edef;">0:00</span>
+                <div style="display: flex; align-items: center; gap: 5px;">
+                    <span id="durationTime" style="color: rgba(255,255,255,0.6);">--:--</span>
+                    <span style="color: #53bdeb; font-size: 0.9rem;">✓✓</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    const audio = document.getElementById('audioPlayer');
+    const playBtn = document.getElementById('playBtn');
+    const seekSlider = document.getElementById('seekSlider');
+    const currentTimeEl = document.getElementById('currentTime');
+    const durationTimeEl = document.getElementById('durationTime');
+
+    // Tenta carregar os dados do áudio assim que possível
+    audio.addEventListener('loadedmetadata', function() {
+        durationTimeEl.innerText = formatTime(audio.duration);
+    });
+
+    function togglePlay() {
+        if (audio.paused) {
+            audio.play().catch(error => {
+                console.log("Erro ao tocar: ", error);
+                alert("Erro: Não foi possível tocar o áudio. Verifique se o arquivo 'spoiler.mp3' está na pasta correta.");
+            });
+            playBtn.innerHTML = '❚❚'; 
+        } else {
+            audio.pause();
+            playBtn.innerHTML = '▶'; 
+        }
+    }
+
+    audio.ontimeupdate = function() {
+        if(audio.duration) {
+            const percent = (audio.currentTime / audio.duration) * 100;
+            seekSlider.value = percent;
+            currentTimeEl.innerText = formatTime(audio.currentTime);
+        }
+        if (audio.ended) {
+            playBtn.innerHTML = '▶';
+            seekSlider.value = 0;
+        }
+    };
+
+    seekSlider.oninput = function() {
+        if(audio.duration) {
+            const time = (seekSlider.value / 100) * audio.duration;
+            audio.currentTime = time;
+        }
+    };
+
+    function formatTime(seconds) {
+        if(isNaN(seconds)) return "0:00";
+        let min = Math.floor(seconds / 60);
+        let sec = Math.floor(seconds % 60);
+        if (sec < 10) sec = '0' + sec;
+        return min + ":" + sec;
+    }
+</script>
+
+    <section class="section-padding container">
+        <div class="bio-container">
+            <img src="raquel.png" alt="Raquel Santos" class="bio-img">
+            
+            <div style="flex: 1;">
+                <h2>Quem está por trás da análise?</h2>
+                <p><strong>Raquel Santos é fundadora da 9Pilla e atua no mercado de capitais desde 2017. Graduanda em Administração, especializou-se em Análise de Dados para transformar números brutos em inteligência de mercado.
+
+Sua trajetória é marcada por um diferencial competitivo raro: a vivência na economia real. Com 12 anos de experiência liderando negócios, Raquel possui a 'visão de dono' (Owner Mentality) necessária para auditar balanços e identificar empresas sólidas. Na 9Pilla, lidera com a filosofia Skin in the Game: todas as estratégias compartilhadas são validadas com capital próprio e foco em consistência de longo prazo.</p>
+                
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding container" style="text-align: center; border-bottom: none;">
+        <h2>O que você recebe hoje:</h2>
+        
+        <div style="text-align: left; max-width: 500px; margin: 0 auto;">
+            <ul class="benefit-list">
+                <li><span class="check">✅</span> <strong>Áudio Diário (seg a sex):</strong> Análise antes da bolsa abrir.</li>
+                <li><span class="check">✅</span> <strong>Resumo em Texto:</strong> Pontos-chave para leitura rápida.</li>
+                <li><span class="check">✅</span> <strong>Acesso Direto:</strong> Canal exclusivo da 9Pilla.</li>
+                <li><span class="check">✅</span> <strong>Zero Financês:</strong> Linguagem clara, de investidora para investidor.</li>
+            </ul>
+        </div>
+
+        <div class="comparison-box">
+            <p style="margin: 0;">☕ Café na Padaria = <strong>R$ 10,00</strong> (Te acorda por 30min)</p>
+            <p style="margin: 5px 0 0 0; color: var(--green-profit); font-size: 1.2rem; font-weight: bold;">🚀 Morning Call 9Pilla = R$ 9,00 (Te protege o mês todo)</p>
+        </div>
+        
+        <br>
+        <a href="https://pay.hub.la/y6qTWsYEpCiDFW6UsZcp" class="btn-cta">COMPRAR</a>
+        <br>
+        <p style="margin-top: 20px; font-size: 0.9rem;">Oferta válida por tempo limitado.</p>
+    </section>
+
+    <footer style="background: #000; text-align: center; padding: 30px 20px; font-size: 0.8rem; color: #555; border-top: 1px solid #222;">
+        <p>&copy; 2026 9Pilla. Todos os direitos reservados.</p>
+        <p>Aviso: Investimentos envolvem riscos. A análise reflete a opinião do especialista.</p>
+    </footer>
+
+    <script>
+        // Configurado para 9 dias a partir do acesso (efeito de escassez evergreen)
+        let countDownDate = new Date();
+        countDownDate.setDate(countDownDate.getDate() + 9); 
+        countDownDate = countDownDate.getTime();
+
+        let x = setInterval(function() {
+            let now = new Date().getTime();
+            let distance = countDownDate - now;
+
+            let days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            let hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            let minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            let seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Formatação com zero à esquerda
+            days = days < 10 ? "0" + days : days;
+            hours = hours < 10 ? "0" + hours : hours;
+            minutes = minutes < 10 ? "0" + minutes : minutes;
+            seconds = seconds < 10 ? "0" + seconds : seconds;
+
+            document.getElementById("countdown").innerHTML = days + "d " + hours + "h "
+            + minutes + "m " + seconds + "s ";
+
+            if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("countdown").innerHTML = "ENCERRADO";
+                document.querySelector('.urgency-bar').style.background = "#333";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
