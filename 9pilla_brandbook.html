@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BRANDBOOK — 9Pilla</title>
+<style>
+  :root {
+    --moss: #3D5240;
+    --bege: #FAF7F1;
+    --tinta: #0A0A0A;
+    --white: #FFFFFF;
+    --moss-light: #5a7a5e;
+    --moss-pale: #e8ede9;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Segoe UI', system-ui, sans-serif; background: var(--bege); color: var(--tinta); }
+
+  .cover {
+    background: var(--moss);
+    color: var(--bege);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 60px 40px;
+    position: relative;
+  }
+  .cover .brand-number { font-size: 120px; font-weight: 900; letter-spacing: -4px; line-height: 1; color: var(--bege); }
+  .cover .brand-name { font-size: 48px; font-weight: 300; letter-spacing: 18px; text-transform: uppercase; margin-top: -10px; }
+  .cover .tagline { font-size: 18px; margin-top: 30px; opacity: 0.7; font-style: italic; }
+  .cover .version { position: absolute; bottom: 40px; font-size: 13px; opacity: 0.5; letter-spacing: 2px; text-transform: uppercase; }
+
+  .page { max-width: 900px; margin: 0 auto; padding: 80px 40px; }
+  .section-label { font-size: 11px; letter-spacing: 4px; text-transform: uppercase; color: var(--moss); font-weight: 700; margin-bottom: 12px; }
+  h2 { font-size: 42px; font-weight: 900; line-height: 1.1; margin-bottom: 32px; color: var(--tinta); }
+  h3 { font-size: 20px; font-weight: 700; margin: 40px 0 16px; color: var(--moss); }
+  p { font-size: 16px; line-height: 1.8; margin-bottom: 16px; color: #2a2a2a; }
+  .divider { width: 60px; height: 4px; background: var(--moss); margin: 20px 0 40px; border-radius: 2px; }
+
+  .swatches { display: flex; gap: 24px; flex-wrap: wrap; margin: 32px 0; }
+  .swatch { flex: 1; min-width: 160px; border-radius: 16px; overflow: hidden; box-shadow: 0 4px 20px rgba(0,0,0,0.08); }
+  .swatch-color { height: 120px; }
+  .swatch-info { padding: 16px; background: white; }
+  .swatch-name { font-weight: 700; font-size: 14px; }
+  .swatch-hex { font-family: monospace; font-size: 13px; color: #666; margin-top: 4px; }
+  .swatch-use { font-size: 12px; color: #999; margin-top: 6px; }
+
+  .manifesto { background: var(--moss); color: var(--bege); border-radius: 24px; padding: 60px; margin: 40px 0; position: relative; overflow: hidden; }
+  .manifesto p { color: var(--bege); font-size: 18px; line-height: 2; opacity: 0.9; }
+  .manifesto p strong { opacity: 1; color: white; }
+
+  table { width: 100%; border-collapse: collapse; margin: 24px 0; }
+  th { background: var(--moss); color: var(--bege); text-align: left; padding: 14px 18px; font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
+  td { padding: 14px 18px; border-bottom: 1px solid #e8e8e0; font-size: 15px; }
+  tr:hover td { background: var(--moss-pale); }
+  td code { background: var(--moss-pale); padding: 2px 8px; border-radius: 4px; font-family: monospace; font-size: 13px; color: var(--moss); }
+
+  .checklist { list-style: none; margin: 24px 0; }
+  .checklist li { padding: 12px 16px; margin-bottom: 8px; border-radius: 10px; background: white; display: flex; align-items: flex-start; gap: 12px; font-size: 15px; box-shadow: 0 2px 8px rgba(0,0,0,0.04); }
+  .checklist li .icon { width: 24px; height: 24px; background: var(--moss); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; flex-shrink: 0; margin-top: 1px; }
+  .checklist li .icon.todo { background: #e0e0d8; color: #999; }
+
+  .pillars { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; margin: 32px 0; }
+  .pillar { background: white; border-radius: 16px; padding: 28px; box-shadow: 0 4px 16px rgba(0,0,0,0.06); border-top: 4px solid var(--moss); }
+  .pillar .pillar-icon { font-size: 32px; margin-bottom: 14px; }
+  .pillar h4 { font-size: 16px; font-weight: 700; margin-bottom: 8px; }
+  .pillar p { font-size: 14px; color: #666; line-height: 1.6; margin: 0; }
+
+  .voice-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin: 24px 0; }
+  .voice-card { border-radius: 12px; padding: 24px; }
+  .voice-card.yes { background: #e8ede9; border-left: 4px solid var(--moss); }
+  .voice-card.no { background: #fde8e8; border-left: 4px solid #c0392b; }
+  .voice-card h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; margin-bottom: 14px; }
+  .voice-card.yes h4 { color: var(--moss); }
+  .voice-card.no h4 { color: #c0392b; }
+  .voice-card li { font-size: 14px; line-height: 1.9; color: #333; margin-left: 16px; }
+
+  .channels { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 16px; margin: 24px 0; }
+  .channel { border-radius: 14px; padding: 22px; text-align: center; background: white; box-shadow: 0 3px 12px rgba(0,0,0,0.06); }
+  .channel .ch-icon { font-size: 28px; margin-bottom: 10px; }
+  .channel .ch-name { font-weight: 700; font-size: 14px; }
+  .channel .ch-status { font-size: 12px; margin-top: 4px; }
+  .channel.active { border-top: 3px solid var(--moss); }
+  .channel.next { border-top: 3px solid #f0a030; opacity: 0.8; }
+  .channel.later { border-top: 3px dashed #ccc; opacity: 0.6; }
+
+  .bio-preview { background: var(--tinta); color: white; border-radius: 20px; padding: 32px; max-width: 320px; margin: 24px auto; font-family: -apple-system, sans-serif; }
+  .bio-avatar { width: 70px; height: 70px; background: var(--moss); border-radius: 50%; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; font-size: 28px; font-weight: 900; color: var(--bege); }
+  .bio-handle { font-weight: 700; font-size: 16px; margin-bottom: 4px; }
+  .bio-text { font-size: 13px; line-height: 1.7; opacity: 0.85; margin-top: 8px; }
+  .bio-link { color: #a8d5b5; font-size: 13px; margin-top: 8px; }
+
+  .footer { background: var(--moss); color: var(--bege); text-align: center; padding: 40px; margin-top: 80px; }
+  .footer p { opacity: 0.7; font-size: 14px; line-height: 2; }
+  .footer a { color: #a8d5b5; text-decoration: none; }
+
+  .section-break { border: none; border-top: 1px solid #e0ded8; margin: 60px 0; }
+</style>
+</head>
+<body>
+
+<div class="cover">
+  <div class="brand-number">9</div>
+  <div class="brand-name">Pilla</div>
+  <div class="tagline">Diário público de operações em opções — todo dia às 09:09</div>
+  <div class="version">Brandbook Oficial · Versão 1.0 · Abril 2026</div>
+</div>
+
+<div class="page">
+  <div class="section-label">01 — Essência</div>
+  <h2>O que é<br>a 9Pilla</h2>
+  <div class="divider"></div>
+  <p>A <strong>9Pilla</strong> é um <strong>diário público de operações em opções</strong> na bolsa brasileira. Não é canal de sinais. Não é call. Não é recomendação de investimento.</p>
+  <p>É a exposição honesta e educativa da rotina operacional de uma trader — em conformidade com a <strong>Resolução CVM nº 20/2021</strong>.</p>
+
+  <div class="manifesto">
+    <p>Enquanto todo mundo esconde a operação, <strong>a 9Pilla abre.</strong></p>
+    <p>Enquanto todo mundo vende o sonho, <strong>a 9Pilla mostra o processo.</strong></p>
+    <p>Enquanto todo mundo promete lucro, <strong>a 9Pilla só promete honestidade.</strong></p>
+    <br>
+    <p style="font-style:italic; opacity:0.6">Todo dia, às 09:09, você vai ver exatamente o que foi feito, por quê, e o que deu.</p>
+    <br>
+    <p style="font-weight:700; letter-spacing:2px;">O SIMPLES SEMPRE VENCE.</p>
+  </div>
+
+  <hr class="section-break">
+
+  <div class="section-label">02 — Posicionamento</div>
+  <h2>Para quem<br>é a 9Pilla</h2>
+  <div class="divider"></div>
+  <table>
+    <tr><th>Atributo</th><th>Definição</th></tr>
+    <tr><td><strong>O que é</strong></td><td>Diário público de operação em opções</td></tr>
+    <tr><td><strong>O que não é</strong></td><td>Grupo de sinais, call, recomendação de investimento</td></tr>
+    <tr><td><strong>Para quem</strong></td><td>Pessoas que querem aprender observando um trader real operar</td></tr>
+    <tr><td><strong>Tom</strong></td><td>Direto, honesto, educativo, sem enrolação</td></tr>
+    <tr><td><strong>Diferencial</strong></td><td>Transparência total — resultados reais, às 09:09, todo dia</td></tr>
+  </table>
+</div>
+
+<div class="page">
+  <div class="section-label">03 — Identidade Visual</div>
+  <h2>Paleta de<br>Cores Oficial</h2>
+  <div class="divider"></div>
+  <div class="swatches">
+    <div class="swatch">
+      <div class="swatch-color" style="background:#3D5240;"></div>
+      <div class="swatch-info"><div class="swatch-name">Moss</div><div class="swatch-hex">#3D5240</div><div class="swatch-use">Cor principal — logo, CTAs, destaques</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#FAF7F1; border: 1px solid #e8e0d0;"></div>
+      <div class="swatch-info"><div class="swatch-name">Bege</div><div class="swatch-hex">#FAF7F1</div><div class="swatch-use">Background principal — domina o espaço</div></div>
+    </div>
+    <div class="swatch">
+      <div class="swatch-color" style="background:#0A0A0A;"></div>
+      <div class="swatch-info"><div class="swatch-name">Tinta</div><div class="swatch-hex">#0A0A0A</div><div class="swatch-use">Texto — legibilidade máxima</div></div>
+    </div>
+  </div>
+
+  <h3>Versões da Logo</h3>
+  <table>
+    <tr><th>Arquivo</th><th>Uso</th></tr>
+    <tr><td><code>logo_moss.png</code></td><td>Fundo claro (Bege, Branco)</td></tr>
+    <tr><td><code>logo_bege.png</code></td><td>Fundo escuro (Moss, Tinta)</td></tr>
+    <tr><td><code>logo_verde.png</code></td><td>Uso digital vibrante</td></tr>
+    <tr><td><code>logo_preto.png</code></td><td>Documentos, impressão</td></tr>
+    <tr><td><code>logo_9pilla_organic.png</code></td><td>Arquivo master principal</td></tr>
+  </table>
+</div>
+
+<div class="page">
+  <div class="section-label">04 — Voz e Tom</div>
+  <h2>Como a 9Pilla<br>se comunica</h2>
+  <div class="divider"></div>
+  <div class="pillars">
+    <div class="pillar"><div class="pillar-icon">🎯</div><h4>Direta</h4><p>Vai ao ponto, sem rodeios. Sem linguagem inflada.</p></div>
+    <div class="pillar"><div class="pillar-icon">🔍</div><h4>Honesta</h4><p>Mostra erro e acerto sem filtro. O loss é tão relevante quanto o gain.</p></div>
+    <div class="pillar"><div class="pillar-icon">📚</div><h4>Educativa</h4><p>Ensina pelo exemplo, não pelo sermão. O processo é o conteúdo.</p></div>
+    <div class="pillar"><div class="pillar-icon">💪</div><h4>Confiante</h4><p>Autoridade silenciosa. Sabe o que faz, não precisa provar.</p></div>
+  </div>
+
+  <div class="voice-grid">
+    <div class="voice-card yes">
+      <h4>✅ A 9Pilla fala assim</h4>
+      <ul>
+        <li>"Hoje operei X. Resultado: Y. Racional: Z."</li>
+        <li>"Não foi dessa vez. Aprendi isso."</li>
+        <li>"Opções têm risco. Eu sei disso."</li>
+      </ul>
+    </div>
+    <div class="voice-card no">
+      <h4>❌ NUNCA fala assim</h4>
+      <ul>
+        <li>"Compra isso agora!"</li>
+        <li>"Lucro garantido"</li>
+        <li>"Oportunidade única"</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Bio do Instagram — Modelo Oficial</h3>
+  <div class="bio-preview">
+    <div class="bio-avatar">9P</div>
+    <div class="bio-handle">@9pilla.link</div>
+    <div class="bio-text">📊 Diário público de opções — todo dia às 09:09<br>Não é sinal. É transparência.<br>⬇️ Acompanhe ao vivo</div>
+    <div class="bio-link">🔗 [link do Hubla]</div>
+  </div>
+</div>
+
+<div class="page">
+  <div class="section-label">05 — Estratégia de Conteúdo</div>
+  <h2>Pilares do<br>Conteúdo</h2>
+  <div class="divider"></div>
+  <table>
+    <tr><th>Pilar</th><th>Descrição</th><th>Formato</th></tr>
+    <tr><td><strong>📈 Diário de Operação</strong></td><td>O que operou, resultado, racional</td><td>Reels / Stories</td></tr>
+    <tr><td><strong>📚 Educação</strong></td><td>Conceitos de opções explicados de forma simples</td><td>Carrossel / Reels</td></tr>
+    <tr><td><strong>🎬 Bastidores</strong></td><td>Processo, rotina, mindset de trader</td><td>Stories</td></tr>
+    <tr><td><strong>📊 Resultados</strong></td><td>P&L real, mês a mês</td><td>Post / Reels</td></tr>
+    <tr><td><strong>💡 Desmistificação</strong></td><td>Quebrando mitos do mercado financeiro</td><td>Carrossel</td></tr>
+  </table>
+
+  <h3>Cadência de Publicação</h3>
+  <ul class="checklist">
+    <li><span class="icon">📱</span><strong>Stories:</strong> diário — 09:09 é o horário âncora</li>
+    <li><span class="icon">🎬</span><strong>Reels:</strong> mínimo 3x por semana</li>
+    <li><span class="icon">📰</span><strong>Carrosseis:</strong> 1-2x por semana</li>
+    <li><span class="icon">🔴</span><strong>Lives:</strong> eventual — marcos ou perguntas abertas</li>
+  </ul>
+</div>
+
+<div class="page">
+  <div class="section-label">06 — Canais Digitais</div>
+  <h2>Expansão<br>de Plataformas</h2>
+  <div class="divider"></div>
+  <div class="channels">
+    <div class="channel active"><div class="ch-icon">📸</div><div class="ch-name">Instagram</div><div class="ch-status" style="color: var(--moss); font-weight:700;">✅ FOCO AGORA</div></div>
+    <div class="channel active"><div class="ch-icon">🌐</div><div class="ch-name">9pilla.com</div><div class="ch-status" style="color: var(--moss); font-weight:700;">✅ NO AR</div></div>
+    <div class="channel next"><div class="ch-icon">🎵</div><div class="ch-name">TikTok</div><div class="ch-status" style="color: #f0a030;">🔜 PRÓXIMO</div></div>
+    <div class="channel next"><div class="ch-icon">▶️</div><div class="ch-name">YouTube Shorts</div><div class="ch-status" style="color: #f0a030;">🔜 FASE 3</div></div>
+    <div class="channel later"><div class="ch-icon">🎥</div><div class="ch-name">YouTube</div><div class="ch-status">⏳ Fase avançada</div></div>
+    <div class="channel later"><div class="ch-icon">🎙️</div><div class="ch-name">Spotify Podcast</div><div class="ch-status">⏳ Fase final</div></div>
+  </div>
+
+  <h3>Próximos Passos Imediatos</h3>
+  <ul class="checklist">
+    <li><span class="icon">1</span>Criar produto no <strong>Hubla</strong> e configurar</li>
+    <li><span class="icon">2</span>Gerar link de checkout do Hubla</li>
+    <li><span class="icon">3</span>Inserir link de checkout no <code>index.html</code></li>
+    <li><span class="icon">4</span>Atualizar link na bio do Instagram</li>
+    <li><span class="icon">5</span>Reformular bio conforme modelo deste brandbook</li>
+    <li><span class="icon">6</span>Criar 5 templates no Canva/Figma</li>
+    <li><span class="icon todo">○</span>Criar conta TikTok e primeiro conteúdo</li>
+  </ul>
+</div>
+
+<div class="page">
+  <div class="section-label">07 — Roadmap</div>
+  <h2>Linha do Tempo<br>2026-2027</h2>
+  <div class="divider"></div>
+  <table>
+    <tr><th>Fase</th><th>Período</th><th>Marcos</th></tr>
+    <tr><td><strong>🟢 Agora</strong></td><td>Abr/2026</td><td>Site no ar · Instagram ativo · Brand definida · Produto Hubla</td></tr>
+    <tr><td><strong>🟡 Q2 2026</strong></td><td>Mai-Jun/2026</td><td>Checkout ativo · Bio reformulada · Layouts prontos</td></tr>
+    <tr><td><strong>🟠 Q3 2026</strong></td><td>Jul-Set/2026</td><td>TikTok ativo · YouTube Shorts · 10k+ seguidores</td></tr>
+    <tr><td><strong>🔴 Q4 2026</strong></td><td>Out-Dez/2026</td><td>CNPI aprovado · 50k reach · Autoridade consolidada</td></tr>
+    <tr><td><strong>🔵 2027</strong></td><td>Jan-Mar/2027</td><td>Certificação Assessora · Podcast · Parceria Warren/Elliot</td></tr>
+  </table>
+
+  <h3>Compliance</h3>
+  <ul class="checklist">
+    <li><span class="icon">✓</span>Conteúdo em conformidade com a <strong>Resolução CVM nº 20/2021</strong></li>
+    <li><span class="icon">✓</span>Nenhum conteúdo pode ser interpretado como recomendação de investimento</li>
+    <li><span class="icon">✓</span>Disclaimer obrigatório: <em>"Conteúdo educativo. Não é recomendação de investimento."</em></li>
+  </ul>
+</div>
+
+<div class="footer">
+  <p><strong style="font-size:20px; letter-spacing:4px;">9PILLA</strong></p>
+  <p>Brandbook Oficial · Versão 1.0 · Abril 2026</p>
+  <p>Repositório: <a href="https://github.com/raquelhandb-spec/9pilla">github.com/raquelhandb-spec/9pilla</a></p>
+  <p style="margin-top: 20px; font-style: italic; font-size: 16px;">« O simples sempre vence. »</p>
+</div>
+
+</body>
+</html>
