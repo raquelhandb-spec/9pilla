@@ -1,0 +1,200 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Morning Call 9Pilla — Diário público de operações em opções na bolsa brasileira</title>
+<meta name="description" content="Toda manhã útil às 09:09 publico o Morning Call do dia: leitura de PETR4, VALE3 e BOVA11, tese da operação e plano. Conteúdo público, em primeira pessoa, sob CVM 20/2021.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.9pilla.com/morning-call/">
+<meta property="og:title" content="Morning Call 9Pilla — Diário público de operações em opções">
+<meta property="og:description" content="Leitura diária do mercado em primeira pessoa. Todo dia útil às 09:09. PETR4, VALE3, BOVA11. Operação própria sob CVM 20/2021.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.9pilla.com/morning-call/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/shared.css">
+<style>
+  /* HERO MORNING CALL INDEX */
+  .mc-hero{padding:80px 0 56px;background:var(--bone);border-bottom:1px solid var(--line)}
+  .mc-hero .container{max-width:980px}
+  .mc-hero h1{
+    font-weight:900;font-size:clamp(36px,5vw,64px);line-height:1.02;letter-spacing:.02em;
+    text-transform:uppercase;margin-bottom:24px;
+  }
+  .mc-hero h1 .dot{color:var(--moss)}
+  .mc-hero .tag{font-size:19px;line-height:1.55;max-width:60ch;margin-bottom:32px;opacity:.92}
+  .mc-hero .pills{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:32px}
+  .mc-hero .pills span{padding:8px 16px;background:#fff;border:1px solid var(--moss);border-radius:999px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--moss)}
+
+  /* INDEX DE MORNING CALLS */
+  .mc-list{padding:80px 0;background:#fff;border-bottom:1px solid var(--line)}
+  .mc-list .head{margin-bottom:48px}
+  .mc-list h2{margin-bottom:14px}
+  .mc-list .sub{font-size:17px;opacity:.75;max-width:60ch}
+  .mc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px}
+  .mc-card{
+    background:var(--bone);border:1px solid var(--line);border-radius:20px;
+    padding:32px;text-decoration:none;color:var(--ink);display:block;
+    transition:border-color .18s, transform .18s;
+  }
+  .mc-card:hover{border-color:var(--moss);transform:translateY(-2px)}
+  .mc-card .day{display:flex;gap:16px;align-items:center;margin-bottom:18px}
+  .mc-card .data{font-size:12px;font-weight:900;letter-spacing:.16em;text-transform:uppercase;color:var(--moss)}
+  .mc-card .ticker{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;padding:4px 10px;background:var(--moss);color:var(--bone);border-radius:999px}
+  .mc-card h3{font-size:22px;font-weight:900;letter-spacing:.01em;line-height:1.2;margin-bottom:14px;text-transform:none}
+  .mc-card p{font-size:15px;line-height:1.55;opacity:.85;margin-bottom:14px}
+  .mc-card .arrow{font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--moss)}
+  .mc-card .arrow::after{content:" →";color:var(--moss)}
+
+  /* PRÓXIMOS */
+  .proximos{padding:80px 0;background:var(--bone)}
+  .proximos .narrow{text-align:center}
+  .proximos h2{margin-bottom:16px}
+  .proximos p{font-size:18px;line-height:1.6;opacity:.85;max-width:50ch;margin:0 auto 28px}
+
+  /* CVM */
+  .cvm{padding:60px 0;background:#fff}
+  .cvm .narrow{font-size:13px;line-height:1.6;opacity:.65;text-align:center}
+
+  @media (max-width:880px){
+    .mc-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="../" class="brand"><img src="../assets/logo_moss.png" alt="9Pilla"></a>
+    <div class="nav-links">
+      <a href="../#story">Story</a>
+      <a href="../#meta">Meta</a>
+      <a href="../#diario">Diário</a>
+      <a href="../#quem">Raquel</a>
+      <a href="../#roadmap">Roadmap</a>
+      <a href="./" aria-current="page">Morning Call</a>
+      <a href="../turma/">Turma</a>
+    </div>
+    <div class="nav-right">
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">Menu</button>
+      <a href="https://chat.whatsapp.com/Ly0K34qNxdT75boi9g4eOF" target="_blank" rel="noopener" class="nav-cta">Entrar na Turma</a>
+    </div>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="../#story">Story</a>
+    <a href="../#meta">Meta</a>
+    <a href="../#diario">Diário</a>
+    <a href="../#quem">Raquel</a>
+    <a href="../#roadmap">Roadmap</a>
+    <a href="./">Morning Call</a>
+    <a href="../turma/">Turma</a>
+    <a href="https://chat.whatsapp.com/Ly0K34qNxdT75boi9g4eOF" target="_blank" rel="noopener">Entrar na Turma</a>
+  </div>
+</nav>
+<script>
+  (function(){
+    var t=document.getElementById('navToggle'),m=document.getElementById('navMobile');
+    if(t&&m){t.addEventListener('click',function(){m.classList.toggle('open')});}
+  })();
+</script>
+
+<!-- HERO -->
+<section class="mc-hero">
+  <div class="container">
+    <div class="eyebrow">Diário público · Todo dia útil às 09:09</div>
+    <h1>Morning Call 9Pilla<span class="dot">.</span></h1>
+    <p class="tag">Toda manhã útil às 09:09 eu publico a leitura do dia: o que aconteceu desde ontem, o que estou observando em PETR4, VALE3 e BOVA11, a tese da operação e o plano. Em primeira pessoa, com a minha própria carteira, sob CVM 20/2021.</p>
+    <div class="pills">
+      <span>PETR4</span>
+      <span>VALE3</span>
+      <span>BOVA11</span>
+      <span>Opções</span>
+      <span>09:09 diário</span>
+    </div>
+    <a href="https://chat.whatsapp.com/Ly0K34qNxdT75boi9g4eOF" target="_blank" rel="noopener" class="btn">Receber pelo WhatsApp</a>
+  </div>
+</section>
+
+<!-- LISTA -->
+<section class="mc-list">
+  <div class="container">
+    <div class="head">
+      <div class="eyebrow">Edições publicadas</div>
+      <h2>Cada manhã<span class="dot">.</span> Uma leitura<span class="dot">.</span></h2>
+      <p class="sub">Cada Morning Call vira uma página pública aqui — para você reler, indexar e estudar com calma. Áudio vai no WhatsApp, texto fica aqui pra sempre.</p>
+    </div>
+
+    <div class="mc-grid">
+      <a class="mc-card" href="2026-05-18-petr4-meta-1000-fundador.html">
+        <div class="day">
+          <span class="data">18 · Mai · 2026</span>
+          <span class="ticker">PETR4</span>
+        </div>
+        <h3>A meta 1000 PETR4 começa aqui — por que estou comprando a Petrobras todo mês</h3>
+        <p>O Morning Call fundador. R$ 400 viraram 253 PETR4 + R$ 6.121,70. A próxima compra é a 254ª ação. Aqui está o porquê.</p>
+        <span class="arrow">Ler edição</span>
+      </a>
+
+      <!-- Placeholder cards para futuras edições — Raquel duplica o card acima e troca data/slug/tese -->
+      <div class="mc-card" style="opacity:.55;pointer-events:none">
+        <div class="day">
+          <span class="data">Em breve</span>
+          <span class="ticker" style="background:rgba(61,82,64,.18);color:var(--moss)">VALE3</span>
+        </div>
+        <h3>VALE3 e o ciclo de minério — leitura do dia</h3>
+        <p>Próximo Morning Call. Texto completo no dia 09:09.</p>
+        <span class="arrow" style="opacity:.5">Em preparação</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRÓXIMOS -->
+<section class="proximos">
+  <div class="narrow">
+    <div class="eyebrow">Como ler o Morning Call</div>
+    <h2>Áudio na Turma<span class="dot">.</span> Texto aqui<span class="dot">.</span></h2>
+    <p>A versão em áudio cai no grupo da Turma no WhatsApp todo dia útil às 09:09. A versão escrita fica nessa página, pública, indexada no Google e organizada por data. Você escolhe como acompanha.</p>
+    <a href="https://chat.whatsapp.com/Ly0K34qNxdT75boi9g4eOF" target="_blank" rel="noopener" class="btn">Entrar na Turma no WhatsApp</a>
+  </div>
+</section>
+
+<!-- CVM -->
+<section class="cvm" style="border-bottom:0">
+  <div class="narrow">
+    <p><strong>Disclaimer CVM:</strong> Conteúdo é relato pessoal de operações próprias, amparado pela Resolução CVM 20/2021. Não constitui análise, recomendação ou consultoria de valores mobiliários. Raquel não é, neste momento, analista CNPI nem assessora certificada.</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-foot">
+  <div class="container">
+    <div class="col brand-foot">
+      <img src="../assets/logo_bege.png" alt="9Pilla">
+      <p>Diário público de operações em opções. Toda manhã às 09:09. Simples, honesto e em primeira pessoa.</p>
+    </div>
+    <div class="col">
+      <h4>Navegar</h4>
+      <a href="../#story">Story</a>
+      <a href="../#meta">Meta 2026</a>
+      <a href="../#diario">Diário</a>
+      <a href="../#roadmap">Roadmap</a>
+      <a href="./">Morning Call</a>
+      <a href="../turma/">Turma</a>
+    </div>
+    <div class="col">
+      <h4>Contato</h4>
+      <a href="https://instagram.com/9pilla.link" target="_blank" rel="noopener">@9pilla.link</a>
+      <a href="mailto:raquel.handb@gmail.com">raquel.handb@gmail.com</a>
+    </div>
+  </div>
+  <div class="container legal">
+    <span>© 2026 9Pilla · Todos os direitos reservados</span>
+    <span>Operação própria · Não é recomendação · CVM 20/2021</span>
+  </div>
+</footer>
+
+</body>
+</html>

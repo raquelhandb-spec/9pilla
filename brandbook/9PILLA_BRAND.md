@@ -1,6 +1,6 @@
 # 9Pilla — Brand Guide
 
-> **Versão 1.0 · Abril/2026**
+> **Versão 2.0 · Maio/2026**
 > Documento oficial de marca, voz e identidade visual da 9Pilla.
 > Mantido por Raquel · raquel.handb@gmail.com
 
@@ -40,7 +40,7 @@ A 9Pilla é o **diário público de operações em opções** da Raquel na bolsa
 >
 > Não quero esperar 10, 20, 30 anos pra viver a vida que eu sonho. Quero dar passos largos. Por isso opções — com risco calculado e posição dimensionada, sempre.
 >
-> Comecei com R$ 400. Hoje opero PETR4, VALE3 e BOVA11 pela Warren/Elliot, com regra escrita antes de cada operação e o diário aberto pra qualquer um conferir.
+> Comecei com R$ 400. Hoje opero PETR4, VALE3 e BOVA11 com regra escrita antes de cada operação e o diário aberto pra qualquer um conferir.
 >
 > Não vendo sinal. Não vendo curso. Não prometo virada de chave. Eu mostro o caminho como ele é — vencendo e perdendo, sem maquiar.
 >
@@ -94,7 +94,7 @@ A 9Pilla é o **diário público de operações em opções** da Raquel na bolsa
 - **Em primeira pessoa.** A Raquel opera o próprio dinheiro, ao vivo, todo dia útil.
 - **Carteira aberta.** Cada operação é registrada e auditável.
 - **CVM-blindada.** Relato sob a Res. 20/2021 — nunca sinal, nunca call.
-- **Trajetória pública.** CNPI até dezembro/2026, Certificação de Assessora até março/2027, sonho de vinculação à Warren/Elliot.
+- **Trajetória pública.** CNPI até dezembro/2026 e Certificação de Assessora até março/2027 — em estudo aberto, à vista de todo mundo.
 
 **Frase de posicionamento (uma linha):**
 > A 9Pilla é o diário público de quem opera o próprio dinheiro em opções — em primeira pessoa, com a carteira aberta, todo dia útil às 09:09.
@@ -105,10 +105,9 @@ A 9Pilla é o **diário público de operações em opções** da Raquel na bolsa
 
 | Etapa | Quando | O quê |
 |---|---|---|
-| 01 | Hoje · abr/2026 | Diário público de operações |
+| 01 | Hoje · mai/2026 | Diário público de operações · Turma gratuita no WhatsApp |
 | 02 | até dez/2026 | CNPI (Analista de Valores Mobiliários) |
 | 03 | até mar/2027 | Certificação de Assessora de Investimentos |
-| 04 | Sonho | Vinculação formal à Warren / Elliot |
 
 ---
 
@@ -202,23 +201,10 @@ A 9Pilla é o **diário público de operações em opções** da Raquel na bolsa
 - Empreendedora há 13+ anos no Mercado do Bairro
 - Graduanda em Administração de Empresas com ênfase em Análise de Dados
 - Certificada Google em Análise de Dados
+- Aluna da **B7 Business School** em dupla titulação: **MBA em Investments & Asset Allocation** e **MBA em Relationship Manager** — ambos reconhecidos pelo MEC
 - Passagens pela área financeira de algumas empresas
-- Cliente Warren desde 2016
 - Opera opções desde fevereiro de 2026
 - Capital inicial: R$ 400 · meta: 1.000 PETR4 até dezembro/2026
-
-### 10.2 Milton Montanari · o "Bro"
-- Professor e amigo da Raquel
-- Excelente operador de mercado, querido e respeitado por grandes marcas
-- Um mestre quando o assunto é investimentos
-- Instagram: [@milton_montanari](https://instagram.com/milton_montanari)
-- **Tratamento na marca:** referência discreta, com carinho. Foto redonda, texto curto. **Nunca dar protagonismo** que conflite com o produto-mãe (opções).
-
-### 10.3 Warren / Elliot (parceiros sonhados)
-- Warren: corretora da Raquel desde 2016, modelo sem conflito, taxas abertas
-- Elliot: braço da Warren para renda variável (bolsa)
-- **Sonho de roadmap:** vinculação formal como assessora após Cert. de Assessoria (mar/2027)
-- **Não somos publi.** A marca menciona Warren/Elliot **uma vez por peça**, no contexto de "onde eu opero", e o conteúdo segue. Sem repetição.
 
 ---
 
@@ -252,7 +238,7 @@ A 9Pilla é **diário pessoal de operação própria**. Todas as comunicações 
 ### 13.1 Foco atual (Q2/2026)
 - **Instagram @9pilla.link** — base de público-alvo, força total
 - **Morning Call (WhatsApp)** — diário em áudio, seg-sex 09:09
-- **Site 9pilla.com** — landing oficial + checkout (Hubla)
+- **Site 9pilla.com** — landing oficial + Turma gratuita no WhatsApp
 
 ### 13.2 Expansão (Q3-Q4/2026)
 - **TikTok** — conteúdo nativo, alta viralidade, programa de criadores iniciantes
@@ -273,19 +259,20 @@ A 9Pilla é **diário pessoal de operação própria**. Todas as comunicações 
 
 ## 14. Produto (Turma 9Pilla)
 
-**Pacote fundadora:**
-- R$ 47/mês (preço travado pra vida toda enquanto a pessoa ficar)
+**Modelo atual — Grátis até regular:**
+A Turma 9Pilla é **gratuita no WhatsApp enquanto a Raquel estuda CNPI (dez/2026) e a Certificação de Assessora (mar/2027)**. Não é freemium nem promoção — é coerência regulatória. Não se cobra por relato de operação própria, e não se pode cobrar por análise sem CNPI nem por assessoria sem certificação. Então, até estar tudo regular, tudo aberto.
+
+**O que entra na Turma (grátis):**
 - Morning Call diário em áudio (seg-sex 09:09)
 - Diário público de operações em tempo real
 - Comunidade fechada no WhatsApp
 - Acompanhamento da meta 1.000 PETR4 ao vivo
-- 30 dias sem cobrança
 
-**Trajetória de preço:**
-- Valor sobe para **R$ 97/mês** conforme a 9Pilla amadurece (CNPI, Certificação de Assessora, vinculação formal Warren/Elliot)
-- Quem entra agora trava o preço de fundadora pra vida toda
+**Quem entra agora vira fundadora:**
+- Acompanha a 9Pilla desde o dia 1, antes de virar produto pago
+- Quando a Raquel ficar regular e a Turma virar paga, fundadoras seguem com condição preservada
 
-**Plataforma:** Hubla (migrar do Cacto + PlugSend acima de 200 membros)
+**Canal único de entrada:** convite direto no WhatsApp via site (sem checkout, sem plataforma de pagamento por enquanto).
 
 ---
 
@@ -311,8 +298,8 @@ Quando bater dúvida sobre uma peça/copy/post, perguntar nesta ordem:
 - ❌ Nunca usar emoji em copy oficial
 - ❌ Nunca usar fontes da blacklist (Papyrus, Comic Sans, Impact, Lobster, Montserrat, Poppins…)
 - ❌ Nunca usar foto de banco de imagem genérica
-- ❌ Nunca repetir Warren/Elliot mais de uma vez por peça
-- ❌ Nunca dar protagonismo ao Milton acima das opções da Raquel
+- ❌ Nunca cobrar pela Turma enquanto a Raquel não estiver com CNPI ou Certificação de Assessora regular
+- ❌ Nunca prometer "sinal", "call paga" ou "recomendação" — nem na Turma grátis
 
 ---
 
@@ -328,4 +315,11 @@ Quando bater dúvida sobre uma peça/copy/post, perguntar nesta ordem:
 
 *Este documento é vivo. A 9Pilla evolui em público — e este brand guide acompanha. Revisões marcadas por número de versão e data.*
 
-**v1.0 · 25 de abril de 2026.**
+**v2.0 · 16 de maio de 2026.**
+
+**Mudanças v1.0 → v2.0:**
+- Produto reposicionado: Turma gratuita no WhatsApp enquanto Raquel estuda CNPI/Assessora; quem entra agora vira fundadora
+- Removidas menções a Warren/Elliot (corretora) e ao Milton Montanari para focar a marca em 100% Raquel
+- Roadmap simplificado de 4 etapas para 3 (Diário · CNPI dez/2026 · Cert. Assessora mar/2027)
+- Adicionada formação B7 Business School (MBA dupla titulação reconhecido MEC) no perfil da Raquel
+- Removidas referências a preço (R$ 47, R$ 97) e a plataforma de checkout (Hubla)

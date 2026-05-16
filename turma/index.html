@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Turma 9Pilla — Comunidade gratuita no WhatsApp</title>
+<meta name="description" content="A Turma 9Pilla é a comunidade fechada no WhatsApp onde o Morning Call das 09:09 e o diário público de operações acontecem em tempo real. Gratuita enquanto a Raquel estuda CNPI e Certificação de Assessora.">
+<meta name="robots" content="index,follow">
+<link rel="canonical" href="https://www.9pilla.com/turma/">
+<meta property="og:title" content="Turma 9Pilla — Comunidade gratuita no WhatsApp">
+<meta property="og:description" content="Comunidade fechada no WhatsApp. Morning Call diário às 09:09. Acompanhamento da meta 1000 PETR4 em tempo real. Gratuita enquanto eu estudo CNPI.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.9pilla.com/turma/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/shared.css">
+<style>
+  /* HERO TURMA */
+  .turma-hero{padding:80px 0 64px;background:var(--bone);border-bottom:1px solid var(--line)}
+  .turma-hero .container{max-width:980px}
+  .turma-hero .eyebrow{margin-bottom:20px}
+  .turma-hero h1{
+    font-weight:900;font-size:clamp(36px,5vw,64px);line-height:1.02;letter-spacing:.02em;
+    text-transform:uppercase;margin-bottom:24px;
+  }
+  .turma-hero h1 .dot{color:var(--moss)}
+  .turma-hero .tag{font-size:19px;line-height:1.55;max-width:60ch;margin-bottom:32px;opacity:.92}
+  .turma-hero .meta-row{display:flex;flex-wrap:wrap;gap:18px;font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--moss);margin-bottom:36px}
+  .turma-hero .meta-row span{padding:8px 16px;background:#fff;border:1px solid var(--moss);border-radius:999px}
+
+  /* ROTINA */
+  .rotina{margin:48px 0}
+  .rotina h2{margin-bottom:12px}
+  .rotina .intro{font-size:18px;opacity:.85;max-width:60ch;margin-bottom:40px}
+  .rotina-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;margin-top:40px}
+  .rotina-card{padding:32px;background:#fff;border:1px solid var(--line);border-radius:20px}
+  .rotina-card .hora{font-size:13px;font-weight:900;letter-spacing:.18em;color:var(--moss);margin-bottom:14px;text-transform:uppercase}
+  .rotina-card h3{font-size:20px;font-weight:900;letter-spacing:.02em;margin-bottom:12px;text-transform:uppercase}
+  .rotina-card p{font-size:15px;line-height:1.6;opacity:.85}
+
+  /* O QUE VOCÊ RECEBE */
+  .recebe-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:0;margin-top:48px;border-top:1px solid var(--line)}
+  .recebe-item{padding:32px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:60px 1fr;gap:24px;align-items:start}
+  .recebe-item:nth-child(odd){padding-right:32px;border-right:1px solid var(--line)}
+  .recebe-item:nth-child(even){padding-left:32px}
+  .recebe-num{font-weight:900;font-size:32px;color:var(--moss);line-height:1;letter-spacing:-.02em}
+  .recebe-item h4{font-size:15px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;margin-bottom:10px}
+  .recebe-item p{font-size:15px;line-height:1.55;opacity:.85}
+
+  /* CTA WHATSAPP CARD GRANDE */
+  .turma-cta-card{
+    max-width:720px;margin:64px auto 0;
+    background:var(--bone);border:1.5px solid var(--moss);
+    padding:56px 48px;text-align:center;border-radius:28px;
+  }
+  .turma-cta-card .top{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--moss);margin-bottom:20px}
+  .turma-cta-card .price{font-size:64px;font-weight:900;letter-spacing:-.02em;line-height:1;margin-bottom:8px}
+  .turma-cta-card .price-sub{font-size:14px;opacity:.6;margin-bottom:32px}
+  .turma-cta-card .perks{text-align:left;display:grid;gap:14px;max-width:440px;margin:0 auto 36px}
+  .turma-cta-card .perk{display:flex;gap:14px;align-items:flex-start;font-size:16px;line-height:1.45}
+  .turma-cta-card .perk::before{content:"";flex:0 0 8px;height:8px;background:var(--moss);border-radius:999px;margin-top:9px}
+  .turma-cta-card .btn{width:auto;min-width:300px}
+  .turma-cta-card .fine{font-size:13px;opacity:.6;margin-top:18px;line-height:1.5;max-width:48ch;margin-left:auto;margin-right:auto}
+
+  /* FUNDADORA */
+  .fundadora{background:var(--moss);color:var(--bone)}
+  .fundadora .narrow{text-align:center}
+  .fundadora .eyebrow{color:var(--bone);opacity:.65}
+  .fundadora h2{color:var(--bone);margin-bottom:20px}
+  .fundadora h2 .dot{color:var(--bone);opacity:.5}
+  .fundadora p{font-size:18px;line-height:1.6;opacity:.9}
+  .fundadora p + p{margin-top:16px}
+
+  /* FAQ */
+  .faq-section{background:var(--bone)}
+  .faq-section h2{text-align:center;margin-bottom:8px}
+  .faq-section .sub{text-align:center;opacity:.7;font-size:16px;margin-bottom:36px}
+  .faq{max-width:760px;margin:48px auto 0}
+  .faq details{border-bottom:1px solid var(--line);padding:22px 0;cursor:pointer}
+  .faq details:first-of-type{border-top:1px solid var(--line)}
+  .faq summary{
+    list-style:none;font-weight:700;font-size:17px;letter-spacing:.01em;
+    display:flex;justify-content:space-between;align-items:center;
+  }
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-size:24px;font-weight:400;color:var(--moss);transition:transform .2s}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{margin-top:14px;font-size:16px;line-height:1.6;opacity:.85}
+
+  @media (max-width:880px){
+    .rotina-grid{grid-template-columns:1fr}
+    .recebe-grid{grid-template-columns:1fr}
+    .recebe-item:nth-child(odd){border-right:0;padding-right:0}
+    .recebe-item:nth-child(even){padding-left:0}
+    .turma-cta-card{padding:40px 28px}
+    .turma-cta-card .btn{min-width:0;width:100%}
+  }
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="../" class="brand"><img src="../assets/logo_moss.png" alt="9Pilla"></a>
+    <div class="nav-links">
+      <a href="../#story">Story</a>
+      <a href="../#meta">Meta</a>
+      <a href="../#diario">Diário</a>
+      <a href="../#quem">Raquel</a>
+      <a href="../#roadmap">Roadmap</a>
+      <a href="../morning-call/">Morning Call</a>
+      <a href="./" aria-current="page">Turma</a>
+    </div>
+    <div class="nav-right">
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">Menu</button>
+      <a href="https://chat.whatsapp.com/Ly0K34qNxdT75boi9g4eOF" target="_blank" rel="noopener" class="nav-cta">Entrar na Turma</a>
+    </div>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="../#story">Story</a>
+    <a href="../#meta">Meta</a>
+    <a href="../#diario">Diário</a>
+    <a href="../#quem">Raquel</a>
+    <a href="../#roadmap">Roadmap</a>
+    <a href="../morning-call/">Morning Call</a>
+    <a href="./">Turma</a>
+    <a href="https://chat.whatsapp.com/Ly0K34qNxdT75boi9g4eOF" target="_blank" rel="noopener">Entrar na Turma</a>
+  </div>
+</nav>
+<script>
+  (function(){
+    var t=document.getElementById('navToggle'),m=document.getElementById('navMobile');
+    if(t&&m){t.addEventListener('click',function(){m.classList.toggle('open')});}
+  })();
+</script>
+
+<!-- HERO -->
+<section class="turma-hero">
+  <div class="container">
+    <div class="eyebrow">Turma 9Pilla · Comunidade fechada</div>
+    <h1>Entra<span class="dot">.</span> Acompanha<span class="dot">.</span> Faz parte<span class="dot">.</span></h1>
+    <p class="tag">A Turma 9Pilla é a comunidade fechada no WhatsApp onde o Morning Call das 09:09 e o diário público de operações acontecem em tempo real. Você vê o que eu compro, o que eu vendo, e por quê — todo dia útil, em primeira pessoa.</p>
+    <div class="meta-row">
+      <span>Gratuita</span>
+      <span>WhatsApp</span>
+      <span>Todo dia útil 09:09</span>
+      <span>Sem cartão</span>
+    </div>
+    <a href="https://chat.whatsapp.com/Ly0K34qNxdT75boi9g4eOF" target="_blank" rel="noopener" class="btn">Entrar na Turma no WhatsApp</a>
+  </div>
+</section>
+
+<!-- ROTINA -->
+<section>
+  <div class="container">
+    <div class="eyebrow">Como é o dia a dia</div>
+    <h2>Uma rotina<span class="dot">.</span> Quatro momentos<span class="dot">.</span></h2>
+    <p class="intro">A Turma não é grupo de novidades soltas. É um ritmo que se repete todo dia útil. Você não precisa estar online o tempo todo — basta abrir três vezes ao dia.</p>
+
+    <div class="rotina-grid">
+      <div class="rotina-card">
+        <div class="hora">09:09 · Manhã</div>
+        <h3>Morning Call em áudio</h3>
+        <p>Áudio curto com a leitura do dia: o que aconteceu desde ontem, o que estou observando em PETR4, VALE3 e BOVA11, e qual é o plano de operação se acontecer X ou Y. Sem indicador secreto. Regra escrita.</p>
+      </div>
+      <div class="rotina-card">
+        <div class="hora">Durante o pregão</div>
+        <h3>Diário em tempo real</h3>
+        <p>Toda entrada e saída de operação é postada na hora. Você vê ticker, preço, tamanho e motivo — junto com a planilha aberta. Sem print depois do fato, sem "eu avisei".</p>
+      </div>
+      <div class="rotina-card">
+        <div class="hora">Final do dia</div>
+        <h3>Fechamento honesto</h3>
+        <p>Resultado do dia: o que rendeu, o que deu prejuízo, o que mudei no meio do caminho. Aprendizado em primeira pessoa, sem maquiar.</p>
+      </div>
+      <div class="rotina-card">
+        <div class="hora">Fim de cada mês</div>
+        <h3>Weekly + Monthly Review</h3>
+        <p>Compilado público das operações do mês: progresso da meta 1000 PETR4, ganhos, perdas, lições. Tudo dentro do que a CVM 20/2021 permite para relato de operação própria.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- O QUE VOCÊ RECEBE -->
+<section style="background:#fff">
+  <div class="container">
+    <div class="eyebrow">O que tem dentro</div>
+    <h2>Sete coisas<span class="dot">.</span> Toda semana<span class="dot">.</span></h2>
+
+    <div class="recebe-grid">
+      <div class="recebe-item">
+        <div class="recebe-num">01</div>
+        <div>
+          <h4>Morning Call diário</h4>
+          <p>Áudio de 3 a 6 minutos todo dia útil às 09:09. Tese, observação e plano. Disponível também em página pública com texto completo.</p>
+        </div>
+      </div>
+      <div class="recebe-item">
+        <div class="recebe-num">02</div>
+        <div>
+          <h4>Diário público das operações</h4>
+          <p>Todo trade meu sai no WhatsApp em tempo real, com ticker, preço, tamanho e motivo. Você acompanha a meta 1000 PETR4 ação por ação.</p>
+        </div>
+      </div>
+      <div class="recebe-item">
+        <div class="recebe-num">03</div>
+        <div>
+          <h4>Carteira aberta no Google Sheets</h4>
+          <p>Planilha viva com posição atual, capital, P/L mês a mês. Compartilhada apenas com a Turma. Atualizo todo dia.</p>
+        </div>
+      </div>
+      <div class="recebe-item">
+        <div class="recebe-num">04</div>
+        <div>
+          <h4>Fechamento mensal honesto</h4>
+          <p>Resumo do mês com todas as operações listadas — vencendoras, perdedoras, neutras. O que aprendi, o que mudei, o que mantive.</p>
+        </div>
+      </div>
+      <div class="recebe-item">
+        <div class="recebe-num">05</div>
+        <div>
+          <h4>Bastidor do MBA da B7</h4>
+          <p>Compartilho o que estou estudando para CNPI e Certificação de Assessora — aulas, livros, frameworks que estão moldando o método.</p>
+        </div>
+      </div>
+      <div class="recebe-item">
+        <div class="recebe-num">06</div>
+        <div>
+          <h4>Conversa entre quem estuda</h4>
+          <p>Grupo é fechado, sem indicação de corretora, sem promessa, sem grupo paralelo. Só pessoas que querem aprender olhando alguém operar de verdade.</p>
+        </div>
+      </div>
+      <div class="recebe-item">
+        <div class="recebe-num">07</div>
+        <div>
+          <h4>Status de fundadora</h4>
+          <p>Quem entra agora, na fase gratuita, fica marcado como Turma Fundadora. Quando eu virar Assessora certificada, o grupo passa a ser pago — você mantém acesso.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="turma-cta-card">
+      <div class="top">Entrar agora</div>
+      <div class="price">Grátis</div>
+      <div class="price-sub">Sem cartão. Sem letra miúda. Sem cobrança escondida.</div>
+      <div class="perks">
+        <div class="perk">Morning Call diário às 09:09</div>
+        <div class="perk">Diário público das operações em tempo real</div>
+        <div class="perk">Carteira aberta no Sheets</div>
+        <div class="perk">Status de fundadora quando virar paga</div>
+      </div>
+      <a href="https://chat.whatsapp.com/Ly0K34qNxdT75boi9g4eOF" target="_blank" rel="noopener" class="btn">Entrar na Turma no WhatsApp</a>
+      <p class="fine">Você pode sair a qualquer momento saindo do grupo no WhatsApp.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FUNDADORA -->
+<section class="fundadora">
+  <div class="narrow">
+    <div class="eyebrow">Por que está gratuito hoje</div>
+    <h2>Honestidade primeiro<span class="dot">.</span> Cobrança depois<span class="dot">.</span></h2>
+    <p>A Turma 9Pilla é gratuita enquanto eu estudo para o CNPI (até dezembro de 2026) e para a Certificação de Assessora de Investimentos (até março de 2027). Sem certificação, eu não cobro — e ponto.</p>
+    <p>Não é estratégia de funil. É a única forma honesta de fazer isso enquanto eu não posso, regulatoriamente, atuar como analista certificada. Tudo que está aqui agora é relato de operação própria, dentro do que a CVM 20/2021 permite a qualquer cidadão.</p>
+    <p>Quando virar paga, quem entrou na fase gratuita não paga. Por isso "Fundadora".</p>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq-section">
+  <div class="container">
+    <div class="eyebrow" style="text-align:center">Perguntas que aparecem direto</div>
+    <h2>FAQ da Turma<span class="dot">.</span></h2>
+    <p class="sub">Se ficou alguma dúvida que não está aqui, manda no Instagram <a href="https://instagram.com/9pilla.link" target="_blank" rel="noopener" style="color:var(--moss);font-weight:700;text-decoration:none">@9pilla.link</a>.</p>
+
+    <div class="faq">
+      <details>
+        <summary>A Turma é mesmo gratuita?</summary>
+        <p>Sim. Zero cobrança, zero cartão, zero letra miúda. Vai continuar gratuita enquanto eu estudo CNPI e Certificação de Assessora. Quando passar a ser paga, quem entrou agora fica como Turma Fundadora e mantém acesso.</p>
+      </details>
+      <details>
+        <summary>Vocês indicam compra ou venda de ações?</summary>
+        <p>Não. Aqui eu mostro o que eu, Raquel, faço com o meu próprio dinheiro — entrada, motivo, saída, resultado. É relato de operação própria, amparado pela CVM 20/2021. Você decide o que faz com isso.</p>
+      </details>
+      <details>
+        <summary>Precisa entender de opções pra entrar?</summary>
+        <p>Não precisa. A maior parte do que opero hoje é estrutura simples em PETR4, VALE3 e BOVA11 — venda coberta, dividendos, posições com regra escrita. Eu explico cada operação em palavras antes do termo técnico.</p>
+      </details>
+      <details>
+        <summary>Quanto tempo por dia preciso dedicar?</summary>
+        <p>O Morning Call das 09:09 é o mínimo — 3 a 6 minutos. Se quiser acompanhar tudo, mais uns 15 minutos de leitura ao longo do dia.</p>
+      </details>
+      <details>
+        <summary>Como cancelo se eu não gostar?</summary>
+        <p>Sai do grupo no WhatsApp. Não tem cobrança recorrente, não tem assinatura, não tem desinscrição complicada.</p>
+      </details>
+      <details>
+        <summary>O grupo tem limite de pessoas?</summary>
+        <p>Hoje a Turma cabe em um grupo do WhatsApp. Quando crescer, virá Comunidade WhatsApp com Canal Morning Call (broadcast) + grupo de conversa. Quem entra agora migra automaticamente.</p>
+      </details>
+      <details>
+        <summary>Por que confiar em alguém que ainda não tem CNPI?</summary>
+        <p>Você não precisa confiar — precisa olhar. Toda operação é pública, toda planilha é aberta, todo resultado fica registrado. Estou estudando CNPI agora justamente porque acredito que método público + certificação é o caminho correto. Enquanto chego lá, você pode acompanhar como uma aluna real estuda e opera o próprio dinheiro.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CVM -->
+<section class="cvm" style="border-bottom:0">
+  <div class="narrow">
+    <p><strong>Disclaimer CVM:</strong> Conteúdo é relato pessoal de operações próprias, amparado pela Resolução CVM 20/2021. Não constitui análise, recomendação ou consultoria de valores mobiliários. Raquel não é, neste momento, analista CNPI nem assessora certificada. Estudo em curso na B7 Business School (MBA Investments &amp; Asset Allocation + Relationship Manager) e preparação para CNPI (dez/2026) e Assessora de Investimentos (mar/2027).</p>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-foot">
+  <div class="container">
+    <div class="col brand-foot">
+      <img src="../assets/logo_bege.png" alt="9Pilla">
+      <p>Diário público de operações em opções. Toda manhã às 09:09. Simples, honesto e em primeira pessoa.</p>
+    </div>
+    <div class="col">
+      <h4>Navegar</h4>
+      <a href="../#story">Story</a>
+      <a href="../#meta">Meta 2026</a>
+      <a href="../#diario">Diário</a>
+      <a href="../#roadmap">Roadmap</a>
+      <a href="../morning-call/">Morning Call</a>
+      <a href="./">Turma</a>
+    </div>
+    <div class="col">
+      <h4>Contato</h4>
+      <a href="https://instagram.com/9pilla.link" target="_blank" rel="noopener">@9pilla.link</a>
+      <a href="mailto:raquel.handb@gmail.com">raquel.handb@gmail.com</a>
+    </div>
+  </div>
+  <div class="container legal">
+    <span>© 2026 9Pilla · Todos os direitos reservados</span>
+    <span>Operação própria · Não é recomendação · CVM 20/2021</span>
+  </div>
+</footer>
+
+</body>
+</html>

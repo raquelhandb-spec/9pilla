@@ -1,0 +1,219 @@
+<!doctype html>
+<!--
+  ===========================================================
+  TEMPLATE MORNING CALL 9PILLA — INSTRUÇÕES DE USO
+  ===========================================================
+
+  Como criar uma nova edição:
+  1) Duplique este arquivo na pasta /morning-call/
+  2) Renomeie usando o padrão SEO:
+     AAAA-MM-DD-TICKER-tese-curta.html
+     ex: 2026-05-19-petr4-venda-coberta-dividendos.html
+     ex: 2026-06-03-vale3-ciclo-minerio.html
+  3) Substitua TODOS os placeholders [[ ... ]] abaixo
+  4) Adicione um card novo no /morning-call/index.html linkando aqui
+  5) Mantenha o slug em minúsculas, sem acentos, com hífen
+
+  Boas práticas SEO:
+  - TÍTULO (60-65 caracteres): ativo + tese + ano
+  - DESCRIPTION (140-160 caracteres): resumo claro do que tem aqui
+  - KEYWORDS: ticker, palavras de tese, 9Pilla, Morning Call
+  - Schema.org Article preenchido (datas no formato ISO)
+  - Linguagem: PT-BR, sem emojis, Buffett-inspired
+  - CVM 20/2021: nunca "sinal" ou "recomendação", sempre "relato de operação própria"
+
+  Estrutura do corpo:
+  Contexto → Raciocínio → Plano → Aprendizado → O que vem agora
+  ===========================================================
+-->
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>[[TICKER]] e [[TESE CURTA]] — Morning Call 9Pilla [[DD/MMM/AAAA]]</title>
+<meta name="description" content="[[RESUMO DE 140-160 CARACTERES. EX: Por que estou ____. Tese, plano e leitura do dia. Relato de operação própria sob CVM 20/2021.]]">
+<meta name="keywords" content="[[TICKER]], [[PALAVRAS-CHAVE TESE]], 9Pilla, Morning Call, diário de operações, bolsa brasileira">
+<meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="Raquel — 9Pilla">
+<link rel="canonical" href="https://www.9pilla.com/morning-call/[[NOME-DO-ARQUIVO.html]]">
+
+<meta property="og:type" content="article">
+<meta property="og:title" content="[[TICKER]] e [[TESE]] — Morning Call 9Pilla">
+<meta property="og:description" content="[[RESUMO CURTO]]">
+<meta property="og:url" content="https://www.9pilla.com/morning-call/[[NOME-DO-ARQUIVO.html]]">
+<meta property="article:published_time" content="[[AAAA-MM-DDT09:09:00-03:00]]">
+<meta property="article:author" content="Raquel — 9Pilla">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "[[TÍTULO COMPLETO]]",
+  "description": "[[RESUMO]]",
+  "author": { "@type": "Person", "name": "Raquel — 9Pilla", "url": "https://www.9pilla.com/#quem" },
+  "publisher": { "@type": "Organization", "name": "9Pilla", "url": "https://www.9pilla.com" },
+  "datePublished": "[[AAAA-MM-DDT09:09:00-03:00]]",
+  "dateModified": "[[AAAA-MM-DDT09:09:00-03:00]]",
+  "mainEntityOfPage": { "@type": "WebPage", "@id": "https://www.9pilla.com/morning-call/[[NOME-DO-ARQUIVO.html]]" },
+  "articleSection": "Morning Call",
+  "keywords": ["[[TICKER]]","[[KEY1]]","[[KEY2]]"]
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/shared.css">
+<style>
+  .mc-art-head{padding:80px 0 48px;background:var(--bone);border-bottom:1px solid var(--line)}
+  .mc-art-head .narrow{max-width:760px}
+  .mc-art-head .meta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:24px;font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--moss)}
+  .mc-art-head .meta span{padding:6px 14px;background:#fff;border:1px solid var(--moss);border-radius:999px}
+  .mc-art-head h1{font-weight:900;font-size:clamp(30px,4.5vw,52px);line-height:1.05;letter-spacing:.01em;margin-bottom:20px;text-transform:none}
+  .mc-art-head h1 .dot{color:var(--moss)}
+  .mc-art-head .lede{font-size:19px;line-height:1.6;opacity:.92;margin-bottom:0}
+
+  .mc-body{padding:64px 0 96px;background:#fff;border-bottom:1px solid var(--line)}
+  .mc-body .narrow{max-width:720px}
+  .mc-body h2{font-size:24px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;margin:48px 0 18px;color:var(--moss)}
+  .mc-body h2:first-child{margin-top:0}
+  .mc-body p{font-size:17px;line-height:1.65;margin-bottom:18px}
+  .mc-body strong{font-weight:900}
+  .mc-body ul{list-style:none;margin:0 0 20px;padding:0}
+  .mc-body ul li{padding:10px 0 10px 22px;position:relative;font-size:17px;line-height:1.55}
+  .mc-body ul li::before{content:"";position:absolute;left:0;top:18px;width:8px;height:8px;background:var(--moss);border-radius:999px}
+  .mc-body .pull{border-left:3px solid var(--moss);padding:8px 0 8px 22px;margin:32px 0;font-weight:700;font-size:19px;line-height:1.4}
+
+  .mc-cta{background:var(--moss);color:var(--bone);padding:80px 0;text-align:center}
+  .mc-cta .eyebrow{color:var(--bone);opacity:.65}
+  .mc-cta h2{color:var(--bone);margin-bottom:18px}
+  .mc-cta h2 .dot{color:var(--bone);opacity:.5}
+  .mc-cta p{font-size:18px;line-height:1.6;opacity:.92;max-width:48ch;margin:0 auto 32px}
+  .mc-cta .btn{background:var(--bone);color:var(--ink);border-color:var(--bone)}
+  .mc-cta .btn:hover{background:var(--ink);color:var(--bone);border-color:var(--ink)}
+
+  .cvm{padding:60px 0;background:var(--bone)}
+  .cvm .narrow{font-size:13px;line-height:1.6;opacity:.65;text-align:center}
+</style>
+</head>
+<body>
+
+<nav class="site-nav">
+  <div class="container">
+    <a href="../" class="brand"><img src="../assets/logo_moss.png" alt="9Pilla"></a>
+    <div class="nav-links">
+      <a href="../#story">Story</a>
+      <a href="../#meta">Meta</a>
+      <a href="../#diario">Diário</a>
+      <a href="../#quem">Raquel</a>
+      <a href="../#roadmap">Roadmap</a>
+      <a href="./">Morning Call</a>
+      <a href="../turma/">Turma</a>
+    </div>
+    <div class="nav-right">
+      <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">Menu</button>
+      <a href="https://chat.whatsapp.com/Ly0K34qNxdT75boi9g4eOF" target="_blank" rel="noopener" class="nav-cta">Entrar na Turma</a>
+    </div>
+  </div>
+  <div class="nav-mobile" id="navMobile">
+    <a href="../#story">Story</a>
+    <a href="../#meta">Meta</a>
+    <a href="../#diario">Diário</a>
+    <a href="../#quem">Raquel</a>
+    <a href="../#roadmap">Roadmap</a>
+    <a href="./">Morning Call</a>
+    <a href="../turma/">Turma</a>
+    <a href="https://chat.whatsapp.com/Ly0K34qNxdT75boi9g4eOF" target="_blank" rel="noopener">Entrar na Turma</a>
+  </div>
+</nav>
+<script>
+  (function(){var t=document.getElementById('navToggle'),m=document.getElementById('navMobile');if(t&&m){t.addEventListener('click',function(){m.classList.toggle('open')});}})();
+</script>
+
+<article>
+  <header class="mc-art-head">
+    <div class="narrow">
+      <div class="meta">
+        <span>[[DD · MMM · AAAA]]</span>
+        <span>09:09</span>
+        <span>[[TICKER]]</span>
+      </div>
+      <h1>[[TÍTULO PRINCIPAL]]<span class="dot">.</span></h1>
+      <p class="lede">[[LEDE DE 2-3 LINHAS RESUMINDO A EDIÇÃO. ESCREVE COMO SE FOSSE FALAR EM PRIMEIRA PESSOA.]]</p>
+    </div>
+  </header>
+
+  <div class="mc-body">
+    <div class="narrow">
+
+      <h2>Contexto</h2>
+      <p>[[O que aconteceu desde o último Morning Call que importa pra leitura de hoje. Notícia, dado, ou evento de mercado relevante para o ativo do dia.]]</p>
+
+      <h2>Raciocínio</h2>
+      <p>[[Como você está lendo a situação. Cite a regra escrita que está aplicando. Cite o que NÃO está fazendo e por quê.]]</p>
+      <ul>
+        <li><strong>Ponto 1:</strong> [[...]]</li>
+        <li><strong>Ponto 2:</strong> [[...]]</li>
+        <li><strong>Ponto 3:</strong> [[...]]</li>
+      </ul>
+
+      <h2>Posição encerrada / em andamento</h2>
+      <p>[[Se fechou alguma operação ontem, conta aqui: ticker, preço de saída, motivo, resultado em R$ e em %. Se está mantendo, explica o porquê.]]</p>
+
+      <div class="pull">"[[Frase âncora curta — pode ser o aprendizado da edição em uma linha.]]"</div>
+
+      <h2>Aprendizado</h2>
+      <p>[[O que essa edição te ensinou. Para você, para quem está acompanhando. Concreto, sem moralizar.]]</p>
+
+      <h2>O que vem agora</h2>
+      <p>[[Próximo passo prático. Qual operação está observando hoje, sem comprometer com horário fixo. Mantém o diário em primeira pessoa.]]</p>
+
+    </div>
+  </div>
+</article>
+
+<section class="mc-cta">
+  <div class="narrow">
+    <div class="eyebrow">Próxima edição cai amanhã às 09:09</div>
+    <h2>Recebe o áudio na hora<span class="dot">.</span></h2>
+    <p>Toda manhã útil às 09:09, em áudio curto, no grupo fechado da Turma 9Pilla. O texto fica aqui, mas o som chega primeiro no WhatsApp.</p>
+    <a href="https://chat.whatsapp.com/Ly0K34qNxdT75boi9g4eOF" target="_blank" rel="noopener" class="btn">Entrar na Turma no WhatsApp</a>
+  </div>
+</section>
+
+<section class="cvm" style="border-bottom:0">
+  <div class="narrow">
+    <p><strong>Disclaimer CVM:</strong> Conteúdo é relato pessoal de operações próprias, amparado pela Resolução CVM 20/2021. Não constitui análise, recomendação, oferta, sinal ou consultoria de valores mobiliários. Raquel não é, neste momento, analista CNPI nem assessora certificada. Rentabilidade passada não é garantia de rentabilidade futura. Investimentos em renda variável envolvem risco de perda do capital investido.</p>
+  </div>
+</section>
+
+<footer class="site-foot">
+  <div class="container">
+    <div class="col brand-foot">
+      <img src="../assets/logo_bege.png" alt="9Pilla">
+      <p>Diário público de operações em opções. Toda manhã às 09:09. Simples, honesto e em primeira pessoa.</p>
+    </div>
+    <div class="col">
+      <h4>Navegar</h4>
+      <a href="../#story">Story</a>
+      <a href="../#meta">Meta 2026</a>
+      <a href="../#diario">Diário</a>
+      <a href="../#roadmap">Roadmap</a>
+      <a href="./">Morning Call</a>
+      <a href="../turma/">Turma</a>
+    </div>
+    <div class="col">
+      <h4>Contato</h4>
+      <a href="https://instagram.com/9pilla.link" target="_blank" rel="noopener">@9pilla.link</a>
+      <a href="mailto:raquel.handb@gmail.com">raquel.handb@gmail.com</a>
+    </div>
+  </div>
+  <div class="container legal">
+    <span>© 2026 9Pilla · Todos os direitos reservados</span>
+    <span>Operação própria · Não é recomendação · CVM 20/2021</span>
+  </div>
+</footer>
+
+</body>
+</html>

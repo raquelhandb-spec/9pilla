@@ -202,7 +202,7 @@
 
   /* ROADMAP — timeline horizontal */
   .roadmap-wrap{margin-top:60px;background:var(--moss);color:var(--bone);border-radius:24px;padding:48px 40px 40px;position:relative;overflow:hidden}
-  .roadmap-line{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;padding-top:42px}
+  .roadmap-line{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:24px;padding-top:42px}
   .roadmap-line::before{content:"";position:absolute;left:6%;right:6%;top:18px;height:2px;background:rgba(250,247,241,.28)}
   .road-step{position:relative;padding:0 4px}
   .road-step .dot-mark{position:absolute;left:50%;top:-32px;transform:translateX(-50%);width:14px;height:14px;border-radius:999px;background:rgba(250,247,241,.45);border:2px solid var(--moss);box-shadow:0 0 0 2px rgba(250,247,241,.45)}
@@ -213,7 +213,41 @@
   .road-step .what{font-weight:900;font-size:18px;line-height:1.18;letter-spacing:.005em;margin-bottom:12px;text-transform:uppercase}
   .road-step .desc{font-size:14px;line-height:1.5;opacity:.88}
 
-  /* MILTON BRO — nota discreta com foto redonda */
+  /* B7 CREDENTIAL CARD — selo de formação no bloco Quem sou */
+  .b7-credential{
+    margin:28px 0;
+    display:grid;grid-template-columns:auto auto 1fr;gap:22px;align-items:center;
+    padding:22px 26px;
+    background:var(--bone);
+    border:1px solid var(--moss);
+    border-radius:18px;
+  }
+  .b7-credential-logo{
+    display:flex;align-items:center;justify-content:center;
+    width:120px;height:64px;
+    background:#0F2552;
+    border-radius:10px;
+    padding:10px 14px;
+  }
+  .b7-credential-logo img{max-width:100%;max-height:100%;object-fit:contain;display:block}
+  .b7-credential-mec{
+    width:84px;height:84px;flex:0 0 auto;
+    display:flex;align-items:center;justify-content:center;
+  }
+  .b7-credential-mec img{width:100%;height:100%;object-fit:contain;display:block}
+  .b7-credential-eyebrow{
+    font-size:10px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--moss);margin-bottom:6px;
+  }
+  .b7-credential-title{font-weight:700;font-size:15px;line-height:1.35;color:var(--ink);margin-bottom:4px}
+  .b7-credential-sub{font-size:13px;color:var(--ink);opacity:.65}
+  @media (max-width:640px){
+    .b7-credential{grid-template-columns:auto auto;gap:18px}
+    .b7-credential-text{grid-column:1/-1}
+    .b7-credential-mec{width:72px;height:72px}
+  }
+
+  /* MILTON BRO — nota discreta com foto redonda (legado, não usado mais) */
   .bro-note{margin-top:32px;padding:22px 26px;border:1px solid var(--line);border-radius:18px;background:#fff;font-size:14px;line-height:1.55;display:flex;gap:18px;align-items:center}
   .bro-note .avatar{flex:0 0 auto;width:64px;height:64px;border-radius:999px;overflow:hidden;background:#eee}
   .bro-note .avatar img{width:100%;height:100%;object-fit:cover;display:block}
@@ -345,12 +379,13 @@
       <a href="#diario">Diário</a>
       <a href="#quem">Raquel</a>
       <a href="#sonho">Sonho</a>
-      <a href="#corretora">Roadmap</a>
-      <a href="#turma">Turma</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="morning-call/">Morning Call</a>
+      <a href="turma/">Turma</a>
     </div>
     <div class="nav-right">
       <button class="nav-toggle" id="navToggle" aria-label="Abrir menu">Menu</button>
-      <a href="#turma" class="nav-cta">Entrar</a>
+      <a href="https://chat.whatsapp.com/Ly0K34qNxdT75boi9g4eOF" target="_blank" rel="noopener" class="nav-cta">Entrar na Turma</a>
     </div>
   </div>
   <div class="nav-mobile" id="navMobile">
@@ -359,8 +394,10 @@
     <a href="#diario">Diário</a>
     <a href="#quem">Raquel</a>
     <a href="#sonho">Sonho</a>
-    <a href="#corretora">Roadmap</a>
-    <a href="#turma">Turma</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="morning-call/">Morning Call</a>
+    <a href="turma/">Turma</a>
+    <a href="https://chat.whatsapp.com/Ly0K34qNxdT75boi9g4eOF" target="_blank" rel="noopener">Entrar na Turma</a>
   </div>
 </nav>
 <script>
@@ -381,7 +418,7 @@
         <h1>Liberdade<span class="dot">.</span> Em primeira pessoa<span class="dot">.</span></h1>
         <p class="tag">Toda manhã às 09:09, leitura curta de mercado e o registro honesto das minhas operações em opções na bolsa brasileira. Sem palpite, sem grito de WhatsApp, sem print escolhido a dedo.</p>
         <div class="hero-actions">
-          <a href="#turma" class="btn">Entrar na turma</a>
+          <a href="https://chat.whatsapp.com/Ly0K34qNxdT75boi9g4eOF" target="_blank" rel="noopener" class="btn">Entrar na Turma</a>
           <a href="#diario" class="btn btn-outline">Ver diário de abril</a>
         </div>
         <div class="hero-trust">
@@ -563,13 +600,26 @@
   <div class="container quem">
     <div class="quem-grid">
       <div class="quem-img">
-        <img src="assets/img/raquel_operando_real.jpg" alt="Raquel operando opções — mesa com dois monitores, planilha de cotações e gráfico">
+        <img src="assets/img/raquel_profissional.jpg" alt="Raquel — foto profissional">
       </div>
       <div>
         <div class="label">Quem está do outro lado</div>
         <h2>Raquel<span class="dot">.</span></h2>
         <p>Opero opções na bolsa brasileira desde fevereiro de 2026. PETR4, VALE3, BOVA11 — três ativos, regra escrita, posição dimensionada, sem ferramenta paga e sem indicador secreto.</p>
-        <p>Antes do mercado financeiro virar o centro do meu dia, vieram <strong>13 anos liderando negócios</strong> como empreendedora no Mercado do Bairro e <strong>passagens pela área financeira de algumas empresas</strong>. Sou graduanda em <strong>Administração de Empresas com ênfase em Análise de Dados</strong> e tenho certificação do <strong>Google em Análise de Dados</strong>. Nada disso me faz analista certificada — mas explica o porquê da regra escrita, da planilha, do diário.</p>
+        <p>Antes do mercado financeiro virar o centro do meu dia, vieram <strong>13 anos liderando negócios</strong> como empreendedora no Mercado do Bairro e <strong>passagens pela área financeira de algumas empresas</strong>. Sou graduanda em <strong>Administração de Empresas com ênfase em Análise de Dados</strong> e tenho certificação do <strong>Google em Análise de Dados</strong>.</p>
+        <p>Hoje sou aluna da B7 Business School em <strong>dupla titulação</strong>: MBA em Investments &amp; Asset Allocation e MBA em Relationship Manager — ambos reconhecidos pelo MEC. É a base técnica do que faço todo dia útil às 09:09.</p>
+
+        <div class="b7-credential">
+          <div class="b7-credential-logo"><img src="assets/img/b7_logo.png" alt="B7 Business School"></div>
+          <div class="b7-credential-mec"><img src="assets/img/selo_mec.png" alt="Selo Reconhecido pelo MEC"></div>
+          <div class="b7-credential-text">
+            <div class="b7-credential-eyebrow">Formação em andamento</div>
+            <div class="b7-credential-title">MBA Investments &amp; Asset Allocation + Relationship Manager</div>
+            <div class="b7-credential-sub">Dupla titulação B7 Business School · Reconhecido pelo MEC</div>
+          </div>
+        </div>
+
+        <p>Nada disso me faz analista certificada hoje — mas explica o porquê da regra escrita, da planilha e do diário. E está tudo no roadmap público.</p>
         <p>Faço questão de provar o que eu falo todos os meses, com a carteira totalmente aberta. <strong>Em primeira pessoa, com o meu próprio dinheiro.</strong></p>
         <p>O que eu faço aqui é o que eu queria ter encontrado quando comecei: alguém operando o próprio capital, mostrando o caminho como ele é — vencendo e perdendo, sem maquiar.</p>
         <div class="pull">"O simples sempre vence."</div>
@@ -613,98 +663,59 @@
   <div class="sonho-spacer"></div>
 </section>
 
-<!-- WARREN / ELLIOT — ONDE EU OPERO -->
-<section id="corretora" style="background:var(--bone)">
+<!-- ROADMAP PÚBLICO -->
+<section id="roadmap" class="bg-moss">
   <div class="container">
-    <div class="eyebrow">Onde eu opero</div>
-    <h2>Warren desde 2016<span class="dot">.</span> Elliot pra bolsa<span class="dot">.</span></h2>
-    <div class="warren">
-      <div class="warren-img">
-        <img src="assets/img/caderno.jpg" alt="Caderno com análise semanal de PETR4 e VALE3">
-      </div>
-      <div class="warren-text">
-        <p class="lede">Sou cliente da <strong>Warren</strong> desde 2016. Escolhi pela transparência: sem empurrar produto, sem esconder taxa, sem incentivo perverso entre quem aloca e quem vende.</p>
-        <p class="lede" style="margin-top:14px">Pra bolsa, opero pela <strong>Elliot</strong> — o braço da Warren para renda variável. Mesmo grupo, mesma cultura, plataforma feita pra quem opera ativos.</p>
-        <ul class="warren-list">
-          <li>Modelo de assessoria sem conflito: não vive de comissão oculta.</li>
-          <li>Taxas e custos abertos antes de qualquer operação.</li>
-          <li>Plataforma Elliot pensada pra quem opera bolsa, com execução limpa.</li>
-          <li>Time técnico real — planejadores CFP®, gestores, especialistas — disposto a sentar e explicar.</li>
-        </ul>
-        <p class="lede" style="margin-top:24px"><strong>Sou cliente, não assessora.</strong> Recomendo a Warren e a Elliot porque é onde eu mesma guardo e movimento o meu dinheiro — e é o modelo de corretora que eu acho que deveria ser regra, não exceção, no Brasil.</p>
+    <div class="eyebrow">Roadmap público · 2026–2027</div>
+    <h2 style="max-width:24ch">Onde a 9Pilla está<span class="dot">.</span> E onde ela vai<span class="dot">.</span></h2>
+    <p class="lede" style="margin-top:18px;max-width:60ch">Aqui não tem promessa de virada de chave. Tem uma linha do tempo escrita, pública, que você pode cobrar de mim a cada mês.</p>
 
-        <div class="bro-note">
-          <div class="avatar"><img src="assets/img/milton_bro.jpg" alt="Milton Montanari"></div>
-          <div class="body">
-            <div class="name">Meu professor querido — Milton Montanari, o “Bro”</div>
-            <p>Excelente operador de mercado, querido e respeitado por grandes marcas. Um mestre quando o assunto é investimentos. <a href="https://instagram.com/milton_montanari" target="_blank" rel="noopener">@milton_montanari</a></p>
-          </div>
+    <div class="roadmap-wrap" style="grid-template-columns:repeat(3,1fr)">
+      <div class="roadmap-line">
+        <div class="road-step now">
+          <span class="dot-mark"></span>
+          <span class="pill">Hoje · mai/2026</span>
+          <div class="when">Etapa 01</div>
+          <div class="what">Diário público de operações</div>
+          <div class="desc">Opero o próprio capital e mostro tudo: entrada, motivo, tamanho, saída e resultado. Relato pessoal, sob a CVM 20/2021.</div>
         </div>
-      </div>
-    </div>
-
-    <!-- ROADMAP 2026 -->
-    <div style="margin-top:96px;padding-top:64px;border-top:1px solid var(--line)">
-      <div class="eyebrow">Roadmap público · 2026</div>
-      <h2 style="max-width:24ch">Onde a 9Pilla está<span class="dot">.</span> E onde ela vai<span class="dot">.</span></h2>
-      <p class="lede" style="margin-top:18px">Aqui não tem promessa de virada de chave. Tem uma linha do tempo escrita, pública, que você pode cobrar de mim a cada mês.</p>
-
-      <div class="roadmap-wrap">
-        <div class="roadmap-line">
-          <div class="road-step now">
-            <span class="dot-mark"></span>
-            <span class="pill">Hoje · abr/2026</span>
-            <div class="when">Etapa 01</div>
-            <div class="what">Diário público de operações</div>
-            <div class="desc">Opero o próprio capital e mostro tudo: entrada, motivo, tamanho, saída e resultado. Relato pessoal, sob a CVM 20/2021.</div>
-          </div>
-          <div class="road-step">
-            <span class="dot-mark"></span>
-            <span class="pill">até dez/2026</span>
-            <div class="when">Etapa 02</div>
-            <div class="what">CNPI em estudo</div>
-            <div class="desc">Tirar o CNPI (Analista de Valores Mobiliários) até dezembro de 2026.</div>
-          </div>
-          <div class="road-step">
-            <span class="dot-mark"></span>
-            <span class="pill">até março/2027</span>
-            <div class="when">Etapa 03</div>
-            <div class="what">Certificação de Assessora</div>
-            <div class="desc">Em sequência ao CNPI, tirar a certificação de Assessora de Investimentos.</div>
-          </div>
-          <div class="road-step">
-            <span class="dot-mark"></span>
-            <span class="pill">Sonho</span>
-            <div class="when">Etapa 04</div>
-            <div class="what">Assessora Warren / Elliot</div>
-            <div class="desc">Me vincular formalmente à corretora em que eu acredito desde 2016.</div>
-          </div>
+        <div class="road-step">
+          <span class="dot-mark"></span>
+          <span class="pill">até dez/2026</span>
+          <div class="when">Etapa 02</div>
+          <div class="what">CNPI em estudo</div>
+          <div class="desc">Tirar o CNPI (Analista de Valores Mobiliários) até dezembro de 2026. Estudando agora, em paralelo ao MBA da B7.</div>
+        </div>
+        <div class="road-step">
+          <span class="dot-mark"></span>
+          <span class="pill">até março/2027</span>
+          <div class="when">Etapa 03</div>
+          <div class="what">Certificação de Assessora</div>
+          <div class="desc">Em sequência ao CNPI, tirar a Certificação de Assessora de Investimentos. Credencial pra próxima porta.</div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TURMA / PREÇO -->
+<!-- TURMA — entrada gratuita no WhatsApp -->
 <section id="turma" class="bg-moss turma-section">
   <div class="container" style="text-align:center;position:relative;z-index:1">
     <div class="eyebrow">Turma 9Pilla</div>
-    <h2>Entra<span class="dot">.</span> Acompanha<span class="dot">.</span> Decide<span class="dot">.</span></h2>
-    <p class="lede" style="margin:0 auto;opacity:.88">Trinta dias gratuitos. Se não fizer sentido, você sai sem cobrança. Se ficar, o preço de fundadora trava pra vida toda.</p>
+    <h2>Entra<span class="dot">.</span> Acompanha<span class="dot">.</span> Faz parte<span class="dot">.</span></h2>
+    <p class="lede" style="margin:0 auto 40px;opacity:.88;max-width:60ch">Enquanto eu estudo CNPI, a Turma é aberta e gratuita. Você entra direto no WhatsApp, recebe o Morning Call todo dia útil às 09:09 e acompanha a meta 1000 PETR4 em tempo real.</p>
 
     <div class="price-card">
-      <div class="top">Plano fundadora</div>
-      <div class="price"><span class="moeda">R$</span>47<span class="mes">/mês</span></div>
-      <div class="trial">30 dias grátis</div>
-      <div class="perks">
-        <div class="perk">Morning Call diário no WhatsApp às 09:09</div>
-        <div class="perk">Todas as operações registradas em tempo real</div>
-        <div class="perk">Fechamento mensal completo com ganhos e perdas</div>
+      <div class="top">O que tem dentro</div>
+      <div class="perks" style="margin-top:8px">
+        <div class="perk">Morning Call diário em áudio · 09:09</div>
+        <div class="perk">Diário público de operações em tempo real</div>
+        <div class="perk">Comunidade fechada no WhatsApp</div>
         <div class="perk">Acompanhamento da meta 1000 PETR4 ao vivo</div>
-        <div class="perk">Preço travado pra vida toda enquanto você ficar</div>
+        <div class="perk">Fechamento mensal com ganhos e perdas, sem maquiar</div>
       </div>
-      <a href="#" class="btn" style="background:var(--ink);color:var(--bone);border-color:var(--ink)">Entrar na turma</a>
-      <p class="price-fine">O valor sobe para <strong>R$&nbsp;97/mês</strong> conforme a 9Pilla amadurece. Quem entra agora trava o preço de fundadora pra vida toda.</p>
+      <a href="https://chat.whatsapp.com/Ly0K34qNxdT75boi9g4eOF" target="_blank" rel="noopener" class="btn" style="background:var(--ink);color:var(--bone);border-color:var(--ink)">Entrar na Turma no WhatsApp</a>
+      <p class="price-fine">Gratuito enquanto eu estudo CNPI e Assessora. Sem cobrança, sem cartão, sem letra miúda. Quem está desde agora vira fundadora.</p>
     </div>
   </div>
 </section>
@@ -714,8 +725,8 @@
   <img src="assets/img/sonho_setup.jpg" class="cta-band-img" alt="">
   <div class="cta-band-inner">
     <h2>O simples sempre vence<span class="dot">.</span></h2>
-    <p>Os trinta dias grátis começam quando você quiser. Você acompanha o diário, sente se o ritmo é seu, e decide.</p>
-    <a href="#turma" class="btn">Entrar na turma</a>
+    <p>Você entra agora, escuta o Morning Call amanhã às 09:09 e sente se o ritmo é seu. É só isso.</p>
+    <a href="https://chat.whatsapp.com/Ly0K34qNxdT75boi9g4eOF" target="_blank" rel="noopener" class="btn">Entrar na Turma no WhatsApp</a>
   </div>
 </div>
 
@@ -731,11 +742,15 @@
       </details>
       <details>
         <summary>Você é assessora ou analista certificada hoje?</summary>
-        <p>Hoje, não. Sou investidora pessoa física operando o próprio capital, e por isso aqui na 9Pilla é sempre <strong>relato de operação própria</strong> — nunca call, nunca recomendação (CVM 20/2021). Estou estudando pra tirar o <strong>CNPI até dezembro de 2026</strong>, e o sonho é me vincular formalmente à Warren ou à Elliot. Tudo isso está no roadmap público ali em cima.</p>
+        <p>Hoje, não. Sou investidora pessoa física operando o próprio capital, e por isso aqui na 9Pilla é sempre <strong>relato de operação própria</strong> — nunca call, nunca recomendação (CVM 20/2021). Estou estudando pra tirar o <strong>CNPI até dezembro de 2026</strong> e a <strong>Certificação de Assessora até março de 2027</strong>. Tudo isso está no roadmap público ali em cima.</p>
+      </details>
+      <details>
+        <summary>A Turma é paga? Tem assinatura?</summary>
+        <p>Hoje não. Enquanto eu estudo CNPI e Assessora, a Turma é aberta e gratuita no WhatsApp. Sem cartão, sem cobrança, sem letra miúda. É diário público, não consultoria — e por isso não cobro.</p>
       </details>
       <details>
         <summary>Preciso saber operar opções pra entrar?</summary>
-        <p>Não. A maioria das pessoas que entra está começando ou nunca tocou em opções. O Morning Call é em linguagem simples e o diário mostra o passo a passo. Você acompanha por 30 dias, sem pagar, e decide.</p>
+        <p>Não. A maioria das pessoas que entra está começando ou nunca tocou em opções. O Morning Call é em linguagem simples e o diário mostra o passo a passo. Você entra, escuta, lê e decide o seu próprio caminho.</p>
       </details>
       <details>
         <summary>Posso copiar suas operações?</summary>
@@ -747,7 +762,7 @@
       </details>
       <details>
         <summary>Como saio se não gostar?</summary>
-        <p>Cancelando direto na sua conta do Hubla, em dois cliques. Nos primeiros 30 dias, sem cobrança nenhuma. Depois disso, o cancelamento vale pro próximo ciclo. Sem letra miúda.</p>
+        <p>É só sair do grupo no WhatsApp, em dois cliques. Sem cobrança, sem cartão, sem letra miúda.</p>
       </details>
     </div>
   </div>
@@ -774,8 +789,9 @@
       <a href="#como">Como funciona</a>
       <a href="#diario">Diário</a>
       <a href="#sonho">Sonho</a>
-      <a href="#corretora">Corretora</a>
-      <a href="#turma">Turma</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="morning-call/">Morning Call</a>
+      <a href="turma/">Turma</a>
       <a href="#faq">FAQ</a>
     </div>
     <div class="col">
