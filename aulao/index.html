@@ -41,7 +41,7 @@
   /* NAV */
   nav{padding:18px 0;border-bottom:1px solid var(--line);position:sticky;top:39px;background:rgba(250,247,241,.96);backdrop-filter:blur(10px);z-index:50}
   nav .container{display:flex;align-items:center;justify-content:space-between;gap:24px}
-  nav .brand img{height:26px;display:block}
+  nav .brand img{height:32px;display:block}
   .nav-cta{
     background:var(--moss);color:var(--bone);padding:11px 24px;border-radius:999px;
     font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;
@@ -291,6 +291,27 @@
   footer img{height:26px}
   footer .legal{font-size:12px;opacity:.55}
 
+  /* MANIFESTO DE MARCA */
+  .manifesto{position:relative;padding:0;overflow:hidden;border-bottom:0}
+  .manifesto-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .manifesto-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(10,10,10,.72), rgba(61,82,64,.82));}
+  .manifesto-inner{position:relative;padding:120px 32px;text-align:center;max-width:820px;margin:0 auto}
+  .manifesto-inner img{height:34px;margin:0 auto 32px;filter:brightness(0) invert(1);opacity:.92}
+  .manifesto-inner h2{color:var(--bone);font-size:clamp(30px,4.4vw,52px);line-height:1.12;margin-bottom:16px}
+  .manifesto-inner p{color:var(--bone);opacity:.72;font-size:15px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+
+  /* PULL QUOTE COM IMAGEM DE FUNDO */
+  .pull-quote{position:relative;overflow:hidden}
+  .pull-quote-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .pull-quote-overlay{position:absolute;inset:0;background:rgba(10,10,10,.62)}
+  .pull-quote .container{position:relative}
+  .pull-quote blockquote{color:var(--bone)}
+  .pull-quote blockquote .accent{color:#8FB08A}
+
+  /* IMAGEM DE APOIO EM SEÇÃO DE TEXTO */
+  .estrutura-visual{border-radius:18px;overflow:hidden;margin-bottom:28px;aspect-ratio:16/10}
+  .estrutura-visual img{width:100%;height:100%;object-fit:cover}
+
   @media (max-width:880px){
     section{padding:72px 0}
     .hero{padding:36px 0 50px}
@@ -310,6 +331,7 @@
     .cta-band-inner{padding:70px 24px}
     .cta-band .event-card{grid-template-columns:1fr}
     footer .container{flex-direction:column;text-align:center}
+    .manifesto-inner{padding:80px 24px}
   }
 </style>
 </head>
@@ -376,6 +398,17 @@
   </div>
 </header>
 
+<!-- MANIFESTO DE MARCA -->
+<section class="manifesto">
+  <img src="assets/img/horizonte.jpg" alt="" class="manifesto-img">
+  <div class="manifesto-overlay"></div>
+  <div class="manifesto-inner">
+    <img src="assets/logo_bege.png" alt="9Pilla">
+    <h2>Dinheiro não é destino. É a jornada para a liberdade.</h2>
+    <p>O mantra que guia a 9Pilla — e guia esse Aulão.</p>
+  </div>
+</section>
+
 <!-- 2. LISTA DE DOR QUALIFICADORA -->
 <section id="para-quem">
   <div class="container">
@@ -415,7 +448,9 @@
 </section>
 
 <!-- 5. PERGUNTA PROVOCATIVA -->
-<section class="pull-quote bg-moss">
+<section class="pull-quote">
+  <img src="assets/img/candle1.jpg" alt="" class="pull-quote-img">
+  <div class="pull-quote-overlay"></div>
   <div class="container">
     <blockquote>Por que algumas pessoas conseguem operar com <span class="accent">clareza e tranquilidade</span>, e outras ficam paralisadas mesmo estudando todos os dias?</blockquote>
   </div>
@@ -440,6 +475,7 @@
     <h2>Não é fórmula mágica<span class="accent">.</span> É a mesma estrutura que eu uso todo dia<span class="accent">.</span></h2>
     <div class="estrutura-grid">
       <div>
+        <div class="estrutura-visual"><img src="assets/img/desk_planejamento.jpg" alt="Planejamento e estrutura financeira"></div>
         <p class="lede">Não é segredo, é método. A mesma leitura de cenário que eu aplico nas minhas próprias operações, todos os dias, com o meu próprio capital — organizada de um jeito que você consegue aplicar sozinho(a) já na próxima operação.</p>
       </div>
       <div class="estrutura-list">
@@ -490,14 +526,14 @@
   <div class="container">
     <div class="quem-grid">
       <div class="quem-img">
-        <img src="assets/img/raquel_profissional.jpg" alt="Raquel, fundadora da 9Pilla">
-        <div class="tag-abs">Quem apresenta</div>
+        <img src="assets/img/candle2.jpg" alt="Gráfico de operação real, queda e recuperação">
+        <div class="tag-abs">Processo real, sem filtro</div>
       </div>
       <div class="quem">
         <div class="label">Autoridade, não mistério</div>
         <h2>Eu sou a Raquel<span class="accent">.</span> Opero com o meu próprio dinheiro<span class="accent">.</span></h2>
-        <p>13 anos de gestão em varejo me ensinaram que preço, margem e timing seguem lógica, não sorte. Levei essa lógica pro mercado financeiro. Sou cliente da Warren desde 2016, e pra bolsa opero pela Elliot.</p>
-        <p>A 9Pilla é o diário público desse processo: eu mostro entrada, saída, risco e resultado — sem esconder o que dá errado.</p>
+        <p>13 anos de gestão em varejo me ensinaram que preço, margem e timing seguem lógica, não sorte. Levei essa lógica pro mercado financeiro, com o meu próprio dinheiro.</p>
+        <p>Hoje sou graduanda em Administração de Empresas, com ênfase em Análise de Dados (certificada pelo Google), e estou em formação nos MBAs de Investment & Asset Allocation e Relationship Manager, com as certificações PAAP e PARB. A 9Pilla é o diário público desse processo: eu mostro entrada, saída, risco e resultado — sem esconder o que dá errado.</p>
         <p class="pull">"Não é sinal, não é call, não é fórmula secreta. É a estrutura que eu uso, mostrada com transparência."</p>
         <div class="quem-facts">
           <div class="qf">
@@ -505,16 +541,16 @@
             <div class="v">13 anos em gestão de varejo</div>
           </div>
           <div class="qf">
-            <div class="l">Corretora</div>
-            <div class="v">Cliente Warren desde 2016</div>
+            <div class="l">Formação</div>
+            <div class="v">Administração de Empresas, ênfase em Análise de Dados (Google)</div>
           </div>
           <div class="qf">
-            <div class="l">Operações</div>
-            <div class="v">Opera opções pela Elliot</div>
+            <div class="l">Em formação</div>
+            <div class="v">MBA Investment & Asset Allocation + Relationship Manager</div>
           </div>
           <div class="qf">
-            <div class="l">Formação em andamento</div>
-            <div class="v">Roadmap CNPI e Certificação de Assessora</div>
+            <div class="l">Certificações</div>
+            <div class="v">PAAP + PARB</div>
           </div>
         </div>
       </div>
