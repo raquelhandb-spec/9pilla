@@ -291,6 +291,24 @@
   footer img{height:26px}
   footer .legal{font-size:12px;opacity:.55}
 
+  /* AULA GRATUITA / HOOK DE CONTEÚDO */
+  .opcoes-cards{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:44px}
+  .opcoes-card{background:#fff;border:1px solid var(--line);border-radius:20px;padding:32px}
+  .chip{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 14px;border-radius:999px;margin-bottom:16px}
+  .chip-call{background:var(--sand);color:var(--moss)}
+  .chip-put{background:var(--ink);color:var(--bone)}
+  .opcoes-card h3{font-size:19px;font-weight:900;margin-bottom:12px;letter-spacing:.005em}
+  .opcoes-card p{font-size:15.5px;line-height:1.6;opacity:.88}
+  .opcoes-card p strong{font-weight:800;color:var(--ink)}
+  .fatores-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:20px}
+  .fator-item{padding:22px;background:var(--sand);border-radius:16px}
+  .fator-item .n{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--moss);margin-bottom:8px}
+  .fator-item p{font-size:14.5px;line-height:1.5}
+  .bridge-cta{margin-top:48px;background:var(--ink);color:var(--bone);border-radius:22px;padding:40px 44px;text-align:center}
+  .bridge-cta p{font-size:18px;line-height:1.55;max-width:56ch;margin:0 auto 26px;opacity:.92}
+  .bridge-cta p strong{color:var(--bone);font-weight:900}
+  .fonte-nota{font-size:12px;opacity:.5;margin-top:28px}
+
   /* MANIFESTO DE MARCA */
   .manifesto{position:relative;padding:0;overflow:hidden;border-bottom:0}
   .manifesto-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -332,6 +350,9 @@
     .cta-band .event-card{grid-template-columns:1fr}
     footer .container{flex-direction:column;text-align:center}
     .manifesto-inner{padding:80px 24px}
+    .opcoes-cards{grid-template-columns:1fr}
+    .fatores-grid{grid-template-columns:1fr}
+    .bridge-cta{padding:32px 24px}
   }
 </style>
 </head>
@@ -397,6 +418,58 @@
     </div>
   </div>
 </header>
+
+<!-- AULA GRÁTIS / HOOK DE CONTEÚDO -->
+<section id="aula-gratis" class="bg-sand">
+  <div class="container">
+    <div class="eyebrow">Conteúdo gratuito · Antes de continuar</div>
+    <h2>Mercado de opções: o que é e como funciona esse tipo de operação<span class="accent">?</span></h2>
+    <p class="lede">Se você já investe em ações ou outros ativos de renda variável, provavelmente já ouviu falar em opções. Antes de continuar lendo essa página, separei 3 minutos pra você entender como esse mercado funciona de verdade — sem economês.</p>
+    <div class="texto-largo" style="margin-top:28px">
+      <p>O mercado de opções trabalha com expectativas sobre o futuro. Nele, você negocia hoje o <strong>direito</strong> de comprar ou vender um ativo, por um preço já combinado (o "strike"), numa data determinada. Ou seja: o que você compra ou vende não é a ação em si — é o direito sobre ela.</p>
+      <p>Assim como as ações, as opções têm um código próprio na Bolsa, formado pelas letras do ativo + uma letra que indica o tipo (compra ou venda) e o mês de vencimento + os números do strike. Parece complexo, mas depois de entender a lógica uma vez, você lê qualquer ticker de opção com naturalidade.</p>
+    </div>
+
+    <div class="opcoes-cards">
+      <div class="opcoes-card">
+        <span class="chip chip-call">Opção de compra · Call</span>
+        <h3>Você aposta que o preço vai subir</h3>
+        <p>Imagine a padaria fictícia <strong>Padoca Real</strong>, negociada na Bolsa a R$ 40. Você compra uma opção de compra com strike de R$ 45, válida por 3 meses — o direito de comprar essas ações por R$ 45 até lá.</p>
+        <p style="margin-top:10px">Se o preço subir para R$ 60, você exerce o direito, compra por R$ 45 e já está na frente. Se o preço cair pra R$ 30, você simplesmente não exerce, e a única perda é o valor que você pagou pela opção (o prêmio) — nunca mais que isso.</p>
+      </div>
+      <div class="opcoes-card">
+        <span class="chip chip-put">Opção de venda · Put</span>
+        <h3>Você se protege se o preço cair</h3>
+        <p>Agora o contrário: você compra uma opção de venda da mesma <strong>Padoca Real</strong>, com strike de R$ 40. Se o preço cair para R$ 25, você exerce o direito de vender por R$ 40 — mesmo com o mercado pagando menos.</p>
+        <p style="margin-top:10px">Se o preço subir, você simplesmente não exerce, e de novo a perda máxima é o prêmio que você pagou. É por isso que opções também funcionam como seguro de carteira, não só como aposta em alta.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:56px">
+      <div class="eyebrow" style="margin-bottom:14px">O que influencia o preço de uma opção</div>
+      <div class="fatores-grid">
+        <div class="fator-item">
+          <div class="n">Volatilidade</div>
+          <p>Quanto mais o preço do ativo se movimenta, mais caro fica o prêmio da opção.</p>
+        </div>
+        <div class="fator-item">
+          <div class="n">Taxa de juros futura</div>
+          <p>Como o mercado de opções projeta valores no futuro, os juros futuros entram direto nessa conta.</p>
+        </div>
+        <div class="fator-item">
+          <div class="n">Tempo até o vencimento</div>
+          <p>Quanto mais longe está a data de vencimento, mais difícil acertar a projeção — e mais caro fica o prêmio.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="bridge-cta">
+      <p>Mercado de opções não é pra quem está começando do zero. É pra quem já entende o básico de renda variável e quer <strong>trocar achismo por estrutura</strong>. É exatamente essa lógica — a mesma que você acabou de entender aqui — que eu destrincho passo a passo no Aulão 9Pilla, com risco calculado, pra você operar com clareza e assertividade.</p>
+      <a href="#oferta" class="btn btn-lg">Quero aprender essa estrutura</a>
+    </div>
+    <p class="fonte-nota">Conteúdo educacional. Os exemplos acima usam empresas e valores fictícios apenas para fins didáticos e não constituem recomendação de investimento.</p>
+  </div>
+</section>
 
 <!-- MANIFESTO DE MARCA -->
 <section class="manifesto">
