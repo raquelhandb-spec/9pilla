@@ -1,0 +1,677 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aulão 9Pilla — A Estrutura Completa Para Operar Opções Com Assertividade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700;900&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --moss:#3D5240;
+    --bone:#FAF7F1;
+    --ink:#0A0A0A;
+    --line:rgba(10,10,10,.10);
+    --muted:#7A7670;
+    --sand:#EFE7DA;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:var(--bone)}
+  body{
+    color:var(--ink);
+    font-family:'DM Sans',sans-serif;font-size:17px;line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  .container{max-width:1240px;margin:0 auto;padding:0 32px}
+  .narrow{max-width:760px;margin:0 auto;padding:0 32px}
+  img{display:block;max-width:100%}
+  a{color:inherit}
+  ::selection{background:var(--moss);color:var(--bone)}
+
+  /* URGENCY BAR */
+  .urgency-bar{
+    background:var(--ink);color:var(--bone);text-align:center;
+    padding:11px 16px;font-size:13px;font-weight:700;letter-spacing:.04em;
+    position:sticky;top:0;z-index:60;
+  }
+  .urgency-bar strong{color:var(--bone)}
+  .urgency-bar .dot{color:var(--moss);margin:0 4px}
+
+  /* NAV */
+  nav{padding:18px 0;border-bottom:1px solid var(--line);position:sticky;top:39px;background:rgba(250,247,241,.96);backdrop-filter:blur(10px);z-index:50}
+  nav .container{display:flex;align-items:center;justify-content:space-between;gap:24px}
+  nav .brand img{height:26px;display:block}
+  .nav-cta{
+    background:var(--moss);color:var(--bone);padding:11px 24px;border-radius:999px;
+    font-weight:700;font-size:12px;letter-spacing:.08em;text-transform:uppercase;text-decoration:none;
+    white-space:nowrap;
+  }
+  .nav-cta:hover{background:var(--ink)}
+
+  /* BUTTONS */
+  .btn{
+    display:inline-block;background:var(--moss);color:var(--bone);
+    padding:18px 34px;font-weight:700;font-size:14px;
+    letter-spacing:.08em;text-transform:uppercase;text-decoration:none;
+    border-radius:999px;transition:all .15s;
+    border:1.5px solid var(--moss);
+  }
+  .btn:hover{background:var(--ink);border-color:var(--ink);transform:translateY(-1px)}
+  .btn-outline{background:transparent;color:var(--ink);border:1.5px solid var(--ink)}
+  .btn-outline:hover{background:var(--ink);color:var(--bone)}
+  .btn-block{display:block;text-align:center;width:100%}
+  .btn-lg{padding:22px 34px;font-size:15px}
+
+  /* HERO */
+  .hero{padding:56px 0 70px}
+  .hero-grid{display:grid;grid-template-columns:1.05fr 1fr;gap:64px;align-items:center}
+  .eyebrow{
+    font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--moss);margin-bottom:18px;display:flex;align-items:center;gap:10px;
+  }
+  .eyebrow .pulse{width:8px;height:8px;border-radius:999px;background:var(--moss);display:inline-block;animation:pulse 1.6s infinite}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
+  .hero h1{
+    font-weight:900;
+    font-size:clamp(32px,4.2vw,54px);line-height:1.04;letter-spacing:.005em;
+    color:var(--ink);margin-bottom:22px;
+  }
+  .hero h1 .accent{color:var(--moss)}
+  .hero .tag{font-size:19px;color:var(--ink);max-width:50ch;margin-bottom:30px;line-height:1.55;opacity:.88}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:26px}
+  .hero-trust{
+    font-size:11px;letter-spacing:.14em;text-transform:uppercase;
+    opacity:.55;display:flex;gap:16px;flex-wrap:wrap;
+  }
+  .hero-trust span::before{content:"·";margin-right:16px;opacity:.5}
+  .hero-trust span:first-child::before{content:""}
+  .hero-img{position:relative;border-radius:24px;overflow:hidden;aspect-ratio:4/5}
+  .hero-img img{width:100%;height:100%;object-fit:cover}
+  .hero-img .badge{
+    position:absolute;top:20px;right:20px;background:var(--moss);color:var(--bone);
+    padding:8px 16px;border-radius:999px;font-size:11px;font-weight:700;
+    letter-spacing:.1em;text-transform:uppercase;
+  }
+  .hero-img .quote{
+    position:absolute;left:0;right:0;bottom:0;padding:28px;
+    background:linear-gradient(to top, rgba(10,10,10,.82), rgba(10,10,10,0));
+    color:var(--bone);font-weight:700;font-size:16px;line-height:1.4;
+  }
+  .hero-img .quote small{display:block;font-size:11px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.7;margin-top:6px}
+
+  /* EVENT CARD (data/hora) */
+  .event-card{
+    background:var(--ink);color:var(--bone);border-radius:22px;
+    padding:32px 36px;display:grid;grid-template-columns:repeat(4,1fr);gap:0;
+    margin-top:8px;
+  }
+  .event-card .ev{padding:0 20px;border-right:1px solid rgba(250,247,241,.16)}
+  .event-card .ev:last-child{border-right:0}
+  .event-card .ev .l{font-size:10px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;opacity:.55;margin-bottom:8px}
+  .event-card .ev .v{font-size:19px;font-weight:900;letter-spacing:-.01em}
+  .event-card .ev .v .small{font-size:13px;font-weight:500;opacity:.7}
+
+  /* SECTION SHELL */
+  section{padding:100px 0;border-bottom:1px solid var(--line)}
+  section.bg-moss{background:var(--moss);color:var(--bone);border-bottom:0}
+  section.bg-ink{background:var(--ink);color:var(--bone);border-bottom:0}
+  section.bg-sand{background:var(--sand)}
+  .bg-moss .eyebrow,.bg-ink .eyebrow{color:var(--bone);opacity:.65}
+  h2{
+    font-weight:900;
+    font-size:clamp(28px,3.5vw,44px);line-height:1.06;letter-spacing:.005em;
+    margin-bottom:24px;
+  }
+  h2 .accent{color:var(--moss)}
+  .bg-moss h2 .accent,.bg-ink h2 .accent{color:var(--bone);opacity:.6}
+  .lede{font-size:19px;line-height:1.6;max-width:62ch;opacity:.92}
+  .lede + .lede{margin-top:18px}
+  .center{text-align:center;margin-left:auto;margin-right:auto}
+
+  /* DOR — checklist */
+  .dor-list{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:48px}
+  .dor-item{
+    display:flex;gap:16px;align-items:flex-start;background:#fff;border:1px solid var(--line);
+    border-radius:18px;padding:24px;
+  }
+  .dor-item .ck{
+    flex:0 0 auto;width:28px;height:28px;border-radius:999px;background:var(--sand);
+    display:flex;align-items:center;justify-content:center;color:var(--moss);font-weight:900;
+  }
+  .dor-item p{font-size:16px;line-height:1.5;font-weight:500}
+
+  /* PROMESSA + PREÇO ANTECIPADO */
+  .promessa-box{
+    background:var(--sand);border-radius:22px;padding:36px 40px;margin-top:44px;
+    display:flex;justify-content:space-between;align-items:center;gap:32px;flex-wrap:wrap;
+  }
+  .promessa-box .txt{max-width:46ch}
+  .promessa-box .txt p{font-size:17px;line-height:1.5}
+  .promessa-box .price-mini{text-align:right;flex-shrink:0}
+  .promessa-box .price-mini .old{text-decoration:line-through;opacity:.5;font-size:14px}
+  .promessa-box .price-mini .new{font-weight:900;font-size:40px;color:var(--moss);line-height:1}
+  .promessa-box .price-mini .cond{font-size:12px;opacity:.65;letter-spacing:.05em;text-transform:uppercase;margin-top:4px}
+
+  /* PULL QUOTE (pergunta provocativa) */
+  .pull-quote{padding:70px 0}
+  .pull-quote blockquote{
+    font-weight:900;font-size:clamp(24px,3.4vw,38px);line-height:1.22;
+    text-align:center;max-width:20ch;margin:0 auto;
+  }
+  .pull-quote blockquote .accent{color:var(--moss)}
+
+  /* AGITAÇÃO / ESPERANÇA — texto largo */
+  .texto-largo{max-width:700px}
+  .texto-largo p{font-size:18px;line-height:1.65;margin-bottom:18px}
+  .texto-largo p strong{font-weight:900}
+
+  /* ESTRUTURA (nome do método) */
+  .estrutura-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:48px}
+  .estrutura-list{display:grid;gap:20px}
+  .estrutura-item{display:flex;gap:18px;align-items:flex-start;padding-bottom:20px;border-bottom:1px solid rgba(250,247,241,.16)}
+  .estrutura-item .num{font-weight:900;font-size:26px;opacity:.55;flex-shrink:0;width:40px}
+  .estrutura-item h3{font-weight:900;font-size:16px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:6px}
+  .estrutura-item p{font-size:15px;opacity:.85;line-height:1.5}
+
+  /* VISUALIZAÇÃO */
+  .visual-card{
+    background:#fff;border:1px solid var(--line);border-radius:24px;padding:48px;
+    margin-top:44px;
+  }
+  .visual-card p{font-size:20px;line-height:1.6;font-style:italic;color:var(--ink)}
+
+  /* AUTORIDADE / QUEM APRESENTA */
+  .quem-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:64px;align-items:center}
+  .quem-img{border-radius:24px;overflow:hidden;aspect-ratio:4/5;position:relative}
+  .quem-img img{width:100%;height:100%;object-fit:cover}
+  .quem-img .tag-abs{
+    position:absolute;bottom:20px;left:20px;background:var(--bone);color:var(--ink);
+    padding:10px 18px;border-radius:999px;font-size:12px;font-weight:900;letter-spacing:.04em;
+  }
+  .quem .label{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--moss);margin-bottom:14px}
+  .quem h2{margin-bottom:22px}
+  .quem p{font-size:18px;line-height:1.65;margin-bottom:16px}
+  .quem .pull{
+    border-left:3px solid var(--moss);padding:6px 0 6px 20px;
+    font-weight:700;font-size:18px;line-height:1.4;color:var(--ink);margin:22px 0 0;
+  }
+  .quem-facts{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:32px;border-top:1px solid var(--line)}
+  .qf{padding:18px 4px 0;border-right:1px solid var(--line)}
+  .qf:nth-child(even){padding-left:24px;border-right:0}
+  .qf .l{font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;opacity:.55;margin-bottom:6px}
+  .qf .v{font-size:15px;font-weight:700;line-height:1.4}
+
+  /* JOGO ANTIGO x NOVO */
+  .anti{display:grid;grid-template-columns:1fr 1fr;gap:32px;margin-top:56px}
+  .anti .col{padding:34px;border:1px solid var(--line);border-radius:20px;background:#fff}
+  .anti .col.good{border-color:var(--moss);border-width:2px}
+  .anti .col h3{font-size:13px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;margin-bottom:24px}
+  .anti .col.bad h3{color:#9b9b9b}
+  .anti .col.good h3{color:var(--moss)}
+  .anti ul{list-style:none}
+  .anti li{font-size:16px;line-height:1.5;padding:13px 0;border-bottom:1px solid var(--line)}
+  .anti li:last-child{border-bottom:0}
+  .anti .col.bad li{opacity:.65;text-decoration:line-through;text-decoration-color:rgba(0,0,0,.25)}
+  .anti .col.good li{font-weight:500}
+
+  /* PROVA SOCIAL */
+  .depoimentos{display:grid;grid-template-columns:repeat(3,1fr);gap:28px;margin-top:48px}
+  .depo-card{
+    border:2px dashed var(--line);border-radius:20px;padding:30px;background:rgba(255,255,255,.5);
+    min-height:220px;display:flex;flex-direction:column;justify-content:space-between;
+  }
+  .depo-card .reserved{
+    font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--moss);opacity:.8;margin-bottom:14px;
+  }
+  .depo-card .ph-text{font-size:15px;opacity:.55;line-height:1.5;font-style:italic}
+  .depo-card .ph-name{margin-top:18px;font-size:13px;font-weight:700;opacity:.45}
+
+  /* OFERTA / PREÇO */
+  .price-card{
+    background:var(--bone);color:var(--ink);
+    max-width:600px;margin:48px auto 0;padding:52px 44px;
+    border-radius:28px;text-align:center;box-shadow:0 24px 60px rgba(10,10,10,.14);
+  }
+  .price-card .top{font-size:11px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--moss);margin-bottom:20px}
+  .price-card .anchor{font-size:16px;text-decoration:line-through;opacity:.5;margin-bottom:6px}
+  .price-card .price{font-weight:900;font-size:68px;line-height:1;letter-spacing:-.02em;margin-bottom:6px}
+  .price-card .price .moeda{font-size:26px;vertical-align:top;margin-right:4px;font-weight:700}
+  .price-card .price-note{font-size:14px;font-weight:700;color:var(--moss);text-transform:uppercase;letter-spacing:.06em;margin-bottom:26px}
+  .price-card .or{font-size:13px;opacity:.5;text-transform:uppercase;letter-spacing:.1em;margin:22px 0}
+  .price-card .installment{font-size:20px;font-weight:700;margin-bottom:28px}
+  .perks{text-align:left;margin:0 auto 32px;max-width:440px;display:grid;gap:14px}
+  .perk{display:flex;gap:14px;align-items:flex-start;font-size:16px;line-height:1.45}
+  .perk::before{content:"";flex:0 0 8px;height:8px;background:var(--moss);border-radius:999px;margin-top:9px}
+  .price-fine{font-size:13px;opacity:.6;margin-top:20px;line-height:1.5}
+
+  /* GARANTIA */
+  .garantia-box{
+    display:flex;gap:28px;align-items:center;background:#fff;border:1px solid var(--line);
+    border-radius:22px;padding:36px 40px;margin-top:44px;max-width:820px;margin-left:auto;margin-right:auto;
+  }
+  .garantia-box .seal{
+    flex:0 0 auto;width:76px;height:76px;border-radius:999px;background:var(--sand);
+    display:flex;align-items:center;justify-content:center;font-size:30px;color:var(--moss);font-weight:900;
+  }
+  .garantia-box p{font-size:16px;line-height:1.55;opacity:.9}
+  .garantia-box strong{font-weight:900}
+
+  /* CTA BAND */
+  .cta-band{margin:0;background:var(--ink);color:var(--bone);position:relative;overflow:hidden}
+  .cta-band-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.32}
+  .cta-band-inner{position:relative;padding:110px 32px;text-align:center;max-width:800px;margin:0 auto}
+  .cta-band h2{margin-bottom:18px}
+  .cta-band p{font-size:19px;opacity:.88;margin-bottom:32px;line-height:1.55}
+  .cta-band .event-card{max-width:640px;margin:0 auto 36px;grid-template-columns:repeat(2,1fr);gap:16px 0}
+  .cta-band .event-card .ev{border-right:0;border-bottom:1px solid rgba(250,247,241,.16);padding:14px 20px}
+  .cta-band .eyebrow{color:var(--bone);opacity:.7}
+  .cta-band .btn{background:var(--moss);color:var(--bone);border-color:var(--moss)}
+  .cta-band .btn:hover{background:var(--bone);color:var(--ink);border-color:var(--bone)}
+  .whats-link{display:block;margin-top:22px;font-size:14px;opacity:.75;text-decoration:underline}
+
+  /* FAQ */
+  .faq{max-width:760px;margin:48px auto 0}
+  .faq details{border-bottom:1px solid var(--line);padding:22px 0;cursor:pointer}
+  .faq details:first-of-type{border-top:1px solid var(--line)}
+  .faq summary{list-style:none;font-weight:700;font-size:17px;letter-spacing:.005em;display:flex;justify-content:space-between;align-items:center}
+  .faq summary::-webkit-details-marker{display:none}
+  .faq summary::after{content:"+";font-size:24px;font-weight:400;color:var(--moss);transition:transform .2s}
+  .faq details[open] summary::after{content:"–"}
+  .faq details p{margin-top:14px;font-size:16px;line-height:1.6;opacity:.85}
+
+  /* CVM */
+  .cvm{padding:56px 0;background:var(--bone)}
+  .cvm .narrow{font-size:13px;line-height:1.6;opacity:.65;text-align:center}
+
+  /* FOOTER */
+  footer{background:var(--ink);color:var(--bone);padding:64px 0 36px}
+  footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
+  footer img{height:26px}
+  footer .legal{font-size:12px;opacity:.55}
+
+  @media (max-width:880px){
+    section{padding:72px 0}
+    .hero{padding:36px 0 50px}
+    .hero-grid{grid-template-columns:1fr;gap:36px}
+    .event-card{grid-template-columns:repeat(2,1fr);gap:20px 0}
+    .event-card .ev{border-right:0;border-bottom:1px solid rgba(250,247,241,.16);padding:0 4px 16px}
+    .dor-list{grid-template-columns:1fr}
+    .promessa-box{flex-direction:column;align-items:flex-start;text-align:left}
+    .promessa-box .price-mini{text-align:left}
+    .estrutura-grid{grid-template-columns:1fr;gap:32px}
+    .quem-grid{grid-template-columns:1fr;gap:32px}
+    .quem-facts{grid-template-columns:1fr}
+    .qf:nth-child(even){padding-left:4px;border-top:1px solid var(--line);padding-top:18px}
+    .anti{grid-template-columns:1fr;gap:20px}
+    .depoimentos{grid-template-columns:1fr;gap:20px}
+    .garantia-box{flex-direction:column;text-align:center;padding:32px 24px}
+    .cta-band-inner{padding:70px 24px}
+    .cta-band .event-card{grid-template-columns:1fr}
+    footer .container{flex-direction:column;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<div class="urgency-bar">
+  VAGAS LIMITADAS <span class="dot">·</span> AULÃO 9PILLA <span class="dot">·</span> 29 DE JULHO, 19H30
+</div>
+
+<nav>
+  <div class="container">
+    <a href="#" class="brand"><img src="assets/logo_moss.png" alt="9Pilla"></a>
+    <a href="#oferta" class="nav-cta">Garantir vaga</a>
+  </div>
+</nav>
+
+<!-- 1. HEADLINE + SUBHEADLINE -->
+<header class="hero">
+  <div class="container">
+    <div class="hero-grid">
+      <div class="hero-text">
+        <div class="eyebrow"><span class="pulse"></span> Aulão ao vivo · Vagas limitadas</div>
+        <h1>Você entende de mercado, mas ainda não sente <span class="accent">segurança para operar.</span></h1>
+        <p class="tag">Para quem já acompanha o mercado, já testou uma ou duas operações, e sente que falta uma estrutura clara entre saber a teoria e operar com confiança. No Aulão 9Pilla eu mostro a estrutura completa que uso para montar cenários em opções — com risco calculado e processo, não achismo.</p>
+        <div class="hero-actions">
+          <a href="#oferta" class="btn">Garantir minha vaga</a>
+          <a href="#estrutura" class="btn btn-outline">Ver o que você vai aprender</a>
+        </div>
+        <div class="hero-trust">
+          <span>Ao vivo, com a Raquel</span>
+          <span>Operação real, sem sinal</span>
+          <span>Vagas limitadas</span>
+        </div>
+      </div>
+      <div class="hero-img">
+        <img src="assets/img/raquel_profissional.jpg" alt="Raquel, apresentadora do Aulão 9Pilla">
+        <div class="badge">Apresenta: Raquel</div>
+        <div class="quote">
+          "Eu opero com o meu dinheiro. No Aulão eu mostro exatamente como."
+          <small>— Raquel, 9Pilla</small>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. DATA/HORA + CTA -->
+    <div class="event-card">
+      <div class="ev">
+        <div class="l">Data</div>
+        <div class="v">29 de julho</div>
+      </div>
+      <div class="ev">
+        <div class="l">Horário</div>
+        <div class="v">19h30</div>
+      </div>
+      <div class="ev">
+        <div class="l">Duração</div>
+        <div class="v">2 horas <span class="small">ao vivo</span></div>
+      </div>
+      <div class="ev">
+        <div class="l">Vagas</div>
+        <div class="v">Limitadas</div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- 2. LISTA DE DOR QUALIFICADORA -->
+<section id="para-quem">
+  <div class="container">
+    <div class="eyebrow">Esse aulão é pra você, principalmente se</div>
+    <h2>Reconhece algum desses sinais<span class="accent">?</span></h2>
+    <div class="dor-list">
+      <div class="dor-item">
+        <div class="ck">✓</div>
+        <p>Já perdeu dinheiro numa operação e não entendeu exatamente o porquê.</p>
+      </div>
+      <div class="dor-item">
+        <div class="ck">✓</div>
+        <p>Sabe o que é PETR4 e VALE3, mas trava na hora de montar um cenário.</p>
+      </div>
+      <div class="dor-item">
+        <div class="ck">✓</div>
+        <p>Sente que está sempre um passo atrás do timing do mercado.</p>
+      </div>
+      <div class="dor-item">
+        <div class="ck">✓</div>
+        <p>Já tentou aprender sozinho(a) e ficou sobrecarregado(a) de informação sem direção.</p>
+      </div>
+    </div>
+
+    <!-- 4. PROMESSA DE VALOR COM PREÇO VISÍVEL -->
+    <div class="promessa-box">
+      <div class="txt">
+        <p><strong>Por um investimento acessível</strong>, você vai entender a estrutura completa que eu uso para montar cenários condicionais nas minhas próprias operações — ao vivo, em 2 horas, com espaço para perguntas.</p>
+      </div>
+      <div class="price-mini">
+        <div class="old">De R$&nbsp;799</div>
+        <div class="new">R$ 79</div>
+        <div class="cond">à vista no pix</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. PERGUNTA PROVOCATIVA -->
+<section class="pull-quote bg-moss">
+  <div class="container">
+    <blockquote>Por que algumas pessoas conseguem operar com <span class="accent">clareza e tranquilidade</span>, e outras ficam paralisadas mesmo estudando todos os dias?</blockquote>
+  </div>
+</section>
+
+<!-- 6. AGITAÇÃO DO PROBLEMA + 7. PONTE DA ESPERANÇA -->
+<section id="dor">
+  <div class="container">
+    <div class="eyebrow">O que ninguém te conta</div>
+    <h2>Não é falta de inteligência<span class="accent">.</span> É falta de estrutura<span class="accent">.</span></h2>
+    <div class="texto-largo">
+      <p>Muita gente desiste do mercado não porque falta inteligência. Falta estrutura. Aprende conceito solto, sem entender como eles se conectam num cenário real. E aí trava na hora de decidir: compra, espera, protege, sai?</p>
+      <p><strong>A boa notícia:</strong> existe uma forma de conectar tudo isso — o macro, o gráfico, o timing — numa metodologia só. É isso que eu construí ao longo dos meus anos operando o meu próprio dinheiro, e é isso que vou te mostrar no Aulão.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 8. ESTRUTURA / O QUE VOCÊ VAI APRENDER -->
+<section id="estrutura" class="bg-ink">
+  <div class="container">
+    <div class="eyebrow">O que vou te mostrar, passo a passo</div>
+    <h2>Não é fórmula mágica<span class="accent">.</span> É a mesma estrutura que eu uso todo dia<span class="accent">.</span></h2>
+    <div class="estrutura-grid">
+      <div>
+        <p class="lede">Não é segredo, é método. A mesma leitura de cenário que eu aplico nas minhas próprias operações, todos os dias, com o meu próprio capital — organizada de um jeito que você consegue aplicar sozinho(a) já na próxima operação.</p>
+      </div>
+      <div class="estrutura-list">
+        <div class="estrutura-item">
+          <div class="num">01</div>
+          <div>
+            <h3>Como ler o cenário</h3>
+            <p>O que observar no macro e no gráfico antes de qualquer decisão.</p>
+          </div>
+        </div>
+        <div class="estrutura-item">
+          <div class="num">02</div>
+          <div>
+            <h3>Como montar a operação</h3>
+            <p>A lógica de estruturar uma posição em opções com risco definido antes de entrar.</p>
+          </div>
+        </div>
+        <div class="estrutura-item">
+          <div class="num">03</div>
+          <div>
+            <h3>Como dimensionar o risco</h3>
+            <p>Quanto colocar, até onde aceitar perder, e onde travar o resultado.</p>
+          </div>
+        </div>
+        <div class="estrutura-item" style="border-bottom:0">
+          <div class="num">04</div>
+          <div>
+            <h3>Como decidir com clareza</h3>
+            <p>O checklist que eu mesma sigo antes de apertar o gatilho de qualquer operação.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. VISUALIZAÇÃO DO RESULTADO -->
+<section id="visualizacao" class="bg-sand">
+  <div class="container narrow">
+    <div class="visual-card">
+      <p>Imagina abrir o gráfico e, em vez de ansiedade, sentir clareza. Saber exatamente qual cenário está se formando e o que fazer em cada um deles — sem depender de sinal, sem depender de sorte, sem depender de ninguém apertando o gatilho por você.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 10 e 14. AUTORIDADE / QUEM APRESENTA -->
+<section id="quem">
+  <div class="container">
+    <div class="quem-grid">
+      <div class="quem-img">
+        <img src="assets/img/raquel_profissional.jpg" alt="Raquel, fundadora da 9Pilla">
+        <div class="tag-abs">Quem apresenta</div>
+      </div>
+      <div class="quem">
+        <div class="label">Autoridade, não mistério</div>
+        <h2>Eu sou a Raquel<span class="accent">.</span> Opero com o meu próprio dinheiro<span class="accent">.</span></h2>
+        <p>13 anos de gestão em varejo me ensinaram que preço, margem e timing seguem lógica, não sorte. Levei essa lógica pro mercado financeiro. Sou cliente da Warren desde 2016, e pra bolsa opero pela Elliot.</p>
+        <p>A 9Pilla é o diário público desse processo: eu mostro entrada, saída, risco e resultado — sem esconder o que dá errado.</p>
+        <p class="pull">"Não é sinal, não é call, não é fórmula secreta. É a estrutura que eu uso, mostrada com transparência."</p>
+        <div class="quem-facts">
+          <div class="qf">
+            <div class="l">Experiência</div>
+            <div class="v">13 anos em gestão de varejo</div>
+          </div>
+          <div class="qf">
+            <div class="l">Corretora</div>
+            <div class="v">Cliente Warren desde 2016</div>
+          </div>
+          <div class="qf">
+            <div class="l">Operações</div>
+            <div class="v">Opera opções pela Elliot</div>
+          </div>
+          <div class="qf">
+            <div class="l">Formação em andamento</div>
+            <div class="v">Roadmap CNPI e Certificação de Assessora</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 11. DIFERENCIAÇÃO: JOGO ANTIGO x JOGO NOVO -->
+<section id="diferenca" class="bg-sand">
+  <div class="container">
+    <div class="eyebrow">O que muda a partir de hoje</div>
+    <h2>Continuar juntando pedaços<span class="accent">.</span> Ou aprender a estrutura completa de uma vez<span class="accent">.</span></h2>
+    <div class="anti">
+      <div class="col bad">
+        <h3>Do jeito de sempre</h3>
+        <ul>
+          <li>Conteúdo solto na internet, sem conexão entre as partes</li>
+          <li>Aprende termo por termo, sem saber aplicar num cenário real</li>
+          <li>Trava na hora de decidir, mesmo estudando todos os dias</li>
+          <li>Segue perfil que só mostra o resultado, nunca o processo</li>
+        </ul>
+      </div>
+      <div class="col good">
+        <h3>No Aulão 9Pilla</h3>
+        <ul>
+          <li>Estrutura completa, direto de quem opera com o próprio capital</li>
+          <li>Cenário, timing e risco conectados numa lógica só</li>
+          <li>Checklist prático pra aplicar já na próxima operação</li>
+          <li>Processo mostrado com transparência, incluindo o que dá errado</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 12. PROVA SOCIAL QUANTIFICADA (placeholder) -->
+<section id="depoimentos">
+  <div class="container">
+    <div class="eyebrow">O que quem já acompanha diz</div>
+    <h2>Prova real<span class="accent">,</span> não elogio genérico<span class="accent">.</span></h2>
+    <p class="lede">Espaço reservado para os depoimentos das alunas da Turma 9Pilla. Assim que você me enviar os textos, substituo estes três cartões — sempre focados em clareza, confiança e mudança de comportamento, nunca em número de rentabilidade (regra de compliance CVM).</p>
+    <div class="depoimentos">
+      <div class="depo-card">
+        <div>
+          <div class="reserved">Espaço reservado · Depoimento 1</div>
+          <p class="ph-text">"Aguardando o texto do depoimento que você vai enviar."</p>
+        </div>
+        <div class="ph-name">Nome da aluna · Turma 9Pilla</div>
+      </div>
+      <div class="depo-card">
+        <div>
+          <div class="reserved">Espaço reservado · Depoimento 2</div>
+          <p class="ph-text">"Aguardando o texto do depoimento que você vai enviar."</p>
+        </div>
+        <div class="ph-name">Nome da aluna · Turma 9Pilla</div>
+      </div>
+      <div class="depo-card">
+        <div>
+          <div class="reserved">Espaço reservado · Depoimento 3</div>
+          <p class="ph-text">"Aguardando o texto do depoimento que você vai enviar."</p>
+        </div>
+        <div class="ph-name">Nome da aluna · Turma 9Pilla</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13/15. OFERTA + PARCELAMENTO + 16. GARANTIA -->
+<section id="oferta" class="bg-moss">
+  <div class="container">
+    <div class="eyebrow">Sua vaga no Aulão 9Pilla</div>
+    <h2 class="center" style="text-align:center">Vagas limitadas<span class="accent">.</span> Garanta a sua agora<span class="accent">.</span></h2>
+    <div class="price-card">
+      <div class="top">Aulão 9Pilla · 29 de julho, 19h30</div>
+      <div class="anchor">De R$ 799</div>
+      <div class="price"><span class="moeda">R$</span>79</div>
+      <div class="price-note">à vista no pix</div>
+      <div class="or">ou</div>
+      <div class="installment">até 12x de R$ 67,42 no cartão</div>
+      <div class="perks">
+        <div class="perk">2 horas de Aulão ao vivo com a Raquel, com espaço para perguntas</div>
+        <div class="perk">A estrutura completa de leitura de cenário, montagem e risco em opções</div>
+        <div class="perk">Checklist prático para aplicar já na próxima operação</div>
+        <div class="perk">Vaga garantida enquanto durar a disponibilidade</div>
+      </div>
+      <a href="#" class="btn btn-block btn-lg">Garantir minha vaga agora</a>
+      <div class="price-fine">Pagamento 100% seguro. Link de matrícula enviado por e-mail e WhatsApp após a confirmação.</div>
+    </div>
+
+    <div class="garantia-box">
+      <div class="seal">✓</div>
+      <p><strong>Garantia de experiência.</strong> Se, acompanhando o Aulão junto comigo, você sentir que não fez sentido pro seu momento, é só me chamar em até 7 dias que eu devolvo o seu investimento. Sem burocracia.</p>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+  <div class="container">
+    <div class="eyebrow">Perguntas frequentes</div>
+    <h2>Antes de garantir sua vaga<span class="accent">.</span></h2>
+    <div class="faq">
+      <details open>
+        <summary>O Aulão é sobre sinal ou recomendação de compra?</summary>
+        <p>Não. O Aulão 9Pilla é conteúdo educacional e relato pessoal de operações próprias. Não constitui recomendação de investimento, em conformidade com a Resolução CVM nº 20/2021.</p>
+      </details>
+      <details>
+        <summary>Preciso já operar opções para participar?</summary>
+        <p>Não precisa. O Aulão foi desenhado para quem já entende o básico de mercado e quer sair com uma estrutura clara para montar cenários e operar com mais confiança.</p>
+      </details>
+      <details>
+        <summary>O Aulão fica gravado?</summary>
+        <p>[A confirmar com a Raquel: se haverá gravação disponível por tempo limitado para quem comprar a vaga.]</p>
+      </details>
+      <details>
+        <summary>Como funciona a garantia?</summary>
+        <p>Você tem até 7 dias após o Aulão para pedir reembolso, sem burocracia, caso sinta que não fez sentido pro seu momento.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="cta-band">
+  <img src="assets/img/horizonte.jpg" alt="" class="cta-band-img">
+  <div class="cta-band-inner">
+    <div class="eyebrow" style="justify-content:center">Última chamada</div>
+    <h2>Vagas limitadas para o Aulão 9Pilla<span class="accent">.</span></h2>
+    <p>29 de julho, 19h30. Duas horas ao vivo pra você sair com a estrutura completa de como eu opero opções com o meu próprio dinheiro.</p>
+    <div class="event-card">
+      <div class="ev">
+        <div class="l">Data e horário</div>
+        <div class="v">29/07 às 19h30</div>
+      </div>
+      <div class="ev">
+        <div class="l">Investimento</div>
+        <div class="v">R$ 79 à vista <span class="small">ou 12x R$ 67,42</span></div>
+      </div>
+    </div>
+    <a href="#oferta-topo" onclick="document.getElementById('oferta').scrollIntoView({behavior:'smooth'});return false;" class="btn btn-lg">Garantir minha vaga</a>
+    <a href="#" class="whats-link">Dúvidas? Fale com a 9Pilla no WhatsApp →</a>
+  </div>
+</div>
+
+<!-- 15. DISCLAIMER CVM -->
+<div class="cvm">
+  <div class="narrow">
+    Conteúdo educacional e relato pessoal de operações próprias. Não constitui recomendação de investimento. Operações em renda variável e opções envolvem riscos. Resultados passados não garantem resultados futuros, em conformidade com a Resolução CVM nº 20/2021.
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <img src="assets/logo_bege.png" alt="9Pilla">
+    <div class="legal">© 2026 9Pilla. Todos os direitos reservados.</div>
+  </div>
+</footer>
+
+</body>
+</html>
